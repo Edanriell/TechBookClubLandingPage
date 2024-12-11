@@ -1,0 +1,20 @@
+{
+	"name": "client",
+	"type": "module",
+	"version": "0.0.1",
+	"scripts": {
+		"start:dev": "astro dev",
+		"start:build": "astro build",
+		"start:preview": "astro preview",
+		"start:astro": "astro"
+	},
+	"dependencies": {
+		"@astrojs/mdx": "^4.0.2",
+		"@astrojs/rss": "^4.0.10",
+		"@astrojs/sitemap": "^3.2.1",
+		"astro": "^5.0.5",
+		"less": "^4.2.1",
+		"prettier": "^3.4.2"
+	},
+	"packageManager": "yarn@4.5.2+sha512.570504f67349ef26d2d86a768dc5ec976ead977aa086b0bb4237e97d5db7ae5c620f9f0e0edf3ea5047205063faff102bf2a2d778664a94eaaa1085ad483fe2e"
+}
