@@ -1,3 +1,21 @@
 ---
+import BaseHead from "@widgets/head/base/ui/base-head.astro";
+import Header from "@widgets/header/ui/header.astro";
+import Footer from "@widgets/footer/ui/footer.astro";
 
+
+const { title, description } = Astro.props;
 ---
+
+<html lang="en">
+	<head>
+		<BaseHead title={title} description={description} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<slot />
+		</main>
+		<Footer />
+	</body>
+</html>
