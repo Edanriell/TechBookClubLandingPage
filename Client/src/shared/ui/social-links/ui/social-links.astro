@@ -1,18 +1,18 @@
 ---
-import { Image } from "astro:assets";
+import Icon from "@shared/ui/icon/ui/icon.astro";
 ---
 
 <ul class="social-links">
 	<li class="social-links__link">
 		<a href="#">
 			<span class="visually-hidden">Butterfly company logotype</span>
-			<Image class="logotype__image" src={butterflyLogotypeImage} alt="Butterfly company logotype" width="22" height="22"/>
+			<Icon iconType="butterfly" />
 		</a>
 	</li>
 	<li class="social-links__link">
 		<a href="#">
 			<span class="visually-hidden">LinkedIn company logotype</span>
-			<Image class="logotype__image" src={linkedInLogotypeImage} alt="LinkedIn company logotype" width="22" height="22"/>
+			<Icon iconType="linkedin" />
 		</a>
 	</li>
 </ul>

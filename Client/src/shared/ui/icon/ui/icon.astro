@@ -1,3 +1,66 @@
 ---
+import { Image } from "astro:assets";
 
+import butterflyLogotypeImage from "@public/images/vector/icon/butterfly.svg";
+import linkedInLogotypeImage from "@public/images/vector/icon/linkedin.svg";
+
+type IconType = "butterfly" | "linkedin";
+
+type Icon = {
+	src: any;
+	alt: string;
+	class: string;
+}
+
+interface Props {
+	iconType: IconType;
+}
+
+const { iconType } = Astro.props;
+
+const icons: Record<IconType, Icon> = {
+	butterfly: {
+		src: butterflyLogotypeImage,
+		alt: "Butterfly company logotype",
+		class: "icon icon--type--butterfly",
+	},
+	linkedin: {
+		src: linkedInLogotypeImage,
+		alt: "LinkedIn company logotype",
+		class: "icon icon--type--linkedin",
+	},
+};
+
+
+const icon = icons[iconType];
+
+if (!icon) {
+	throw new Error(`Invalid iconType: ${iconType}`);
+}
 ---
+
+
+{icon && (
+	<Image
+			class={icon.class}
+			src={icon.src}
+			alt={icon.alt}
+			width="22"
+			height="22"
+	/>
+)}
+
+<style lang="less">
+	.icon {
+		width: 22rem;
+		height: 22rem;
+	}
+
+	.icon--type--butterfly {
+		color: #fff;
+	}
+
+	.icon--type--linkedin {
+		color: #fff;
+	}
+</style>
