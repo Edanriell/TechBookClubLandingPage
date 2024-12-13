@@ -1,6 +1,88 @@
 ---
+import { Image } from "astro:assets";
 
+import butterflyLogotypeImage from "@public/images/vector/icon/butterfly.svg";
+import linkedInLogotypeImage from "@public/images/vector/icon/linkedIn.svg";
 ---
 
+<footer class="footer">
+	<div class="footer__wrapper">
+		<p class="footer__copyright">© 2024 – Tech Book Club</p>
+		<ul class="social-links">
+			<li class="social-links__link">
+				<a href="#">
+					<span class="visually-hidden">Butterfly company logotype</span>
+					<Image class="logotype__image" src={butterflyLogotypeImage} alt="Butterfly company logotype" width="22" height="22"/>
+				</a>
+			</li>
+			<li class="social-links__link">
+				<a href="#">
+					<span class="visually-hidden">LinkedIn company logotype</span>
+					<Image class="logotype__image" src={linkedInLogotypeImage} alt="LinkedIn company logotype" width="22" height="22"/>
+				</a>
+			</li>
+		</ul>
+	</div>
+</footer>
 
-<footer></footer>
+<style lang="less">
+	.footer {
+		position: relative;
+		padding: 0 16rem;
+		background: var(--colors-neutral-900);
+		align-items: center;
+
+		@media (width >= 768px) {
+			padding: 0 32rem;
+			border-top: 1rem solid var(--colors-neutral-700);
+		}
+
+		@media (width >= 1440px) {
+			border-top: unset;
+			padding: 0 135rem;
+		}
+	}
+
+	.footer__wrapper {
+		display: flex;
+		flex-direction: column;
+		row-gap: 16rem;
+		align-items: center;
+		padding: 24rem 0;
+		border-top: 1rem solid var(--colors-neutral-700);
+
+		@media (width >= 768px) {
+			flex-direction: row;
+			justify-content: space-between;
+			border-top: unset;
+		}
+
+		@media (width >= 1440px) {
+			border-top: 1rem solid var(--colors-neutral-700);
+		}
+	}
+
+	.footer__copyright {
+		font-family: var(--font-family), sans-serif;
+		font-weight: 400;
+		font-size: 14rem;
+		line-height: 120%;
+		letter-spacing: -0.07em;
+		color: var(--colors-neutral-50);
+
+		@media (width >= 768px) {
+			color: var(--colors-neutral-0);
+		}
+	}
+
+	.social-links {
+		display: flex;
+		flex-direction: row;
+		column-gap: 24rem;
+		align-items: center;
+	}
+
+	.social-links__link {
+		position: relative;
+	}
+</style>
