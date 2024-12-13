@@ -1,20 +1,36 @@
 ---
 import Icon from "@shared/ui/icon/ui/icon.astro";
+import { type IconType } from "@shared/ui/icon/ui/types";
+
+type SocialLink = {
+	href: string,
+	description: string,
+	iconType: IconType
+}
+
+const socialLinks : Array<SocialLink> = [
+	{
+		href: "#",
+		description: "Link to Butterfly profile",
+		iconType: "butterfly",
+	},
+	{
+		href: "#",
+		description: "Link to LinkedIn profile",
+		iconType: "linkedin",
+	},
+];
 ---
 
 <ul class="social-links">
-	<li class="social-links__link">
-		<a href="#">
-			<span class="visually-hidden">Butterfly company logotype</span>
-			<Icon iconType="butterfly" />
-		</a>
-	</li>
-	<li class="social-links__link">
-		<a href="#">
-			<span class="visually-hidden">LinkedIn company logotype</span>
-			<Icon iconType="linkedin" />
-		</a>
-	</li>
+	{socialLinks.map(({ href, description, iconType }) => (
+		<li class="social-links__link">
+			<a href={href}>
+				<span class="visually-hidden">{description}</span>
+				<Icon iconType={iconType} />
+			</a>
+		</li>
+	))}
 </ul>
 
 <style lang="less">
