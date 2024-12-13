@@ -4,13 +4,7 @@ import { Image } from "astro:assets";
 import butterflyLogotypeImage from "@public/images/vector/icon/butterfly.svg";
 import linkedInLogotypeImage from "@public/images/vector/icon/linkedin.svg";
 
-type IconType = "butterfly" | "linkedin";
-
-type Icon = {
-	src: any;
-	alt: string;
-	class: string;
-}
+import { type IconType, type Icon } from "./types";
 
 interface Props {
 	iconType: IconType;
