@@ -1,4 +1,203 @@
 ---
+import { Image } from "astro:assets";
 
-
+import heroImage from "@public/images/raster/hero.jpg"
+import man1image from "@public/images/raster/persons/man-1.jpg";
+import man2image from "@public/images/raster/persons/man-2.jpg";
+import man3image from "@public/images/raster/persons/man-3.jpg";
+import startIcon from "@public/images/vector/icon/star.svg";
+import arrowDownIcon from "@public/images/vector/icon/arrow-down.svg";
 ---
+
+<section class="hero-section">
+	<div class="hero-section__content">
+		<h1 class="hero-section__title">Join the ultimate tech book club</h1>
+		<p class="hero-section__text">Turn your reading time into learning time with fellow tech enthusiasts. Get curated recommendations, join vibrant discussions, and level up your skills one chapter at a time.</p>
+		<a href="#" id="" class="link">
+			<span class="link__text">Review membership options</span>
+			<Image class="link__icon" src={arrowDownIcon} alt="" width="16" height="17"/>
+		</a>
+		<div class="review-group">
+			<div class="review-group__image-group">
+				<Image class="review-group__image" src={man1image} alt="Smiling asian man" width="40" height="40"/>
+				<Image class="review-group__image" src={man2image} alt="Smiling caucasian man" width="40" height="40"/>
+				<Image class="review-group__image" src={man3image} alt="Smiling afro american man" width="40" height="40"/>
+			</div>
+			<div class="review-group__review-content">
+				<div class="rating">
+					<Image class="rating__icon" src={startIcon} alt="" width="16" height="15"/>
+					<Image class="rating__icon" src={startIcon} alt="" width="16" height="15"/>
+					<Image class="rating__icon" src={startIcon} alt="" width="16" height="15"/>
+					<Image class="rating__icon" src={startIcon} alt="" width="16" height="15"/>
+					<Image class="rating__icon" src={startIcon} alt="" width="16" height="15"/>
+				</div>
+				<p class="review-group__review-text">200+ developers joined already</p>
+			</div>
+		</div>
+	</div>
+	<div class="hero-section__image-wrapper">
+		<Image class="hero-section__image" src={heroImage} alt="Bunch of persons reading books in library" width="343" height="371"/>
+	</div>
+	<div class="hero-section__image-pattern"></div>
+	<div class="hero-section__image-glow"></div>
+</section>
+
+<style lang="less">
+	.hero-section {
+		position: relative;
+		z-index: 2;
+		padding: 108rem 16rem 80rem 16rem;
+		display: flex;
+		flex-direction: column;
+		row-gap: 64rem;
+		background: var(--colors-neutral-50);
+		margin-top: -108rem;
+		overflow: hidden;
+	}
+
+	.hero-section__content {
+		position: relative;
+		flex: 0 0 auto;
+		z-index: 2;
+	}
+
+	.hero-section__title {
+		font-family: var(--font-family), sans-serif;
+		font-weight: 700;
+		font-size: 38rem;
+		line-height: 120%;
+		letter-spacing: -0.05em;
+		background: linear-gradient(154deg, #fea36f 0%, #062630 100%);
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		margin-bottom: 24rem;
+	}
+
+	.hero-section__text {
+		font-family: var(--second-family), sans-serif;
+		font-weight: 400;
+		font-size: 20rem;
+		line-height: 140%;
+		letter-spacing: -0.03em;
+		color: var(--colors-neutral-700);
+		margin-bottom: 32rem;
+	}
+
+	.link {
+		position: relative;
+		border: 2rem solid var(--colors-neutral-900);
+		border-radius: 8rem;
+		padding: 21.5rem 23rem 21.5rem 23rem;
+		background: var(--colors-light-salmon-50);
+		display: flex;
+		flex-direction: row;
+		column-gap: 16rem;
+		align-items: center;
+		width: 100%;
+		max-width: 343rem;
+		max-height: 64rem;
+	}
+
+	.link__text {
+		font-family: var(--font-family), sans-serif;
+		font-weight: 700;
+		font-size: 16rem;
+		line-height: 130%;
+		letter-spacing: -0.06em;
+		color: var(--colors-neutral-900);
+		text-transform: uppercase;
+		flex: 0 0 auto;
+	}
+
+	.link__icon {
+		width: 16rem;
+		height: 17rem;
+		flex: 0 0 auto;
+	}
+
+	.review-group {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		column-gap: 12rem;
+		margin-top: 20rem;
+	}
+
+	.review-group__image-group {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+
+	.review-group__image {
+		width: 40rem;
+		height: 40rem;
+		margin-right: -5rem;
+		background-color: #fff;
+		border: 2rem solid #fff;
+		border-radius: 50%;
+		flex: 0 0 auto;
+	}
+
+	.review-group__review-content {
+		display: flex;
+		flex-direction: column;
+		row-gap: 9rem;
+	}
+
+	.rating {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		column-gap: 8rem;
+	}
+
+	.rating__icon {
+		width: 16rem;
+		height: 15rem;
+	}
+
+	.review-group__review-text {
+		font-family: var(--font-family), sans-serif;
+		font-weight: 400;
+		font-size: 14rem;
+		line-height: 120%;
+		letter-spacing: -0.07em;
+		color: var(--colors-neutral-700);
+	}
+
+	.hero-section__image-wrapper {
+		position: relative;
+		flex: 0 0 auto;
+		z-index: 2;
+	}
+
+	.hero-section__image {
+		width: 100%;
+		max-width: 343rem;
+		height: 371rem;
+		border-radius: 7rem;
+		background: var(--colors-neutral-900);
+		object-fit: cover;
+	}
+
+	.hero-section__image-pattern {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 820rem;
+		background: url("/images/vector/background-pattern-light.svg") repeat;
+		z-index: 1;
+	}
+
+	.hero-section__image-glow {
+		position: absolute;
+		top: 720rem;
+		right: 555rem;
+		background: url("/images/vector/background-glow-light.svg") no-repeat;
+		width: 684rem;
+		height: 684rem;
+	}
+</style>
