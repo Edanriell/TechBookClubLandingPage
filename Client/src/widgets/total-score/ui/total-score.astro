@@ -1,43 +1,45 @@
 ---
 import { Image } from "astro:assets";
 
-import man1image from "@public/images/raster/persons/man-1.jpg";
-import man2image from "@public/images/raster/persons/man-2.jpg";
-import man3image from "@public/images/raster/persons/man-3.jpg";
+import user1image from "@public/images/raster/persons/man-1.jpg";
+import user2image from "@public/images/raster/persons/man-2.jpg";
+import user3image from "@public/images/raster/persons/man-3.jpg";
 import startIcon from "@public/images/vector/icon/star.svg";
+
+const usersImages = [
+	{
+		imageSrc: user1image,
+	},
+	{
+		imageSrc: user2image,
+	},
+	{
+		imageSrc: user3image,
+	}
+];
+
+const totalUsersScore: 1 | 2 | 3 | 4 | 5 = 5;
+
+const activeUsersCount: number = 200;
 ---
 
 <div class="total-score">
 	<ul class="total-score__users-image-list users-image-list">
-		<li class="users-image-list__item">
-			<Image class="total-score__image" src={man1image} alt="Smiling asian man" width="40" height="40"/>
-		</li>
-		<li class="users-image-list__item">
-			<Image class="total-score__image" src={man2image} alt="Smiling caucasian man" width="40" height="40"/>
-		</li>
-		<li class="users-image-list__item">
-			<Image class="total-score__image" src={man3image} alt="Smiling afro american man" width="40" height="40"/>
-		</li>
+		{usersImages.map(({ imageSrc }) => (
+			<li class="users-image-list__item">
+				<Image class="users-image-list__user-image" src={imageSrc} alt="Smiling asian man" width="40" height="40"/>
+			</li>
+		))}
 	</ul>
-	<div class="total-score__average-score">
+	<div class="total-score__total-value">
 		<ol class="score-list">
-			<li class="score-list__item">
-				<Image class="score__icon" src={startIcon} alt="" width="16" height="15"/>
-			</li>
-			<li class="score-list__item">
-				<Image class="score__icon" src={startIcon} alt="" width="16" height="15"/>
-			</li>
-			<li class="score-list__item">
-				<Image class="score__icon" src={startIcon} alt="" width="16" height="15"/>
-			</li>
-			<li class="score-list__item">
-				<Image class="score__icon" src={startIcon} alt="" width="16" height="15"/>
-			</li>
-			<li class="score-list__item">
-				<Image class="score__icon" src={startIcon} alt="" width="16" height="15"/>
-			</li>
+			{Array.from({ length: totalUsersScore }).map(() => (
+				<li class="score-list__item">
+					<Image class="score-list__score-icon" src={startIcon} alt="" width="16" height="15"/>
+				</li>
+			))}
 		</ol>
-		<p class="total-score__active-users-count">200+ developers joined already</p>
+		<p class="total-score__active-users-count">{activeUsersCount}+ developers joined already</p>
 	</div>
 </div>
 
@@ -65,7 +67,7 @@ import startIcon from "@public/images/vector/icon/star.svg";
 		flex: 0 0 auto;
 	}
 
-	.total-score__image {
+	.users-image-list__user-image {
 		width: 40rem;
 		height: 40rem;
 		background-color: #fff;
@@ -74,7 +76,7 @@ import startIcon from "@public/images/vector/icon/star.svg";
 		object-fit: cover;
 	}
 
-	.total-score__average-score {
+	.total-score__total-value {
 		display: flex;
 		flex-direction: column;
 		row-gap: 9rem;
@@ -91,7 +93,7 @@ import startIcon from "@public/images/vector/icon/star.svg";
 		flex: 0 0 auto;
 	}
 
-	.score__icon {
+	.score-list__score-icon {
 		width: 16rem;
 		height: 15rem;
 	}
