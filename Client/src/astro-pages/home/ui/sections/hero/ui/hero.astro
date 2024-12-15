@@ -15,7 +15,7 @@ import arrowDownIcon from "@public/images/vector/icon/arrow-down.svg";
 		<p class="hero-section__text">Turn your reading time into learning time with fellow tech enthusiasts. Get curated recommendations, join vibrant discussions, and level up your skills one chapter at a time.</p>
 		<a href="#" id="" class="link">
 			<span class="link__text">Review membership options</span>
-			<Image class="link__icon" src={arrowDownIcon} alt="" width="16" height="17"/>
+			<Image class="link__icon" src={arrowDownIcon} alt="" width="24" height="25"/>
 		</a>
 		<div class="review-group">
 			<div class="review-group__image-group">
@@ -59,6 +59,9 @@ import arrowDownIcon from "@public/images/vector/icon/arrow-down.svg";
 		position: relative;
 		flex: 0 0 auto;
 		z-index: 2;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 	}
 
 	.hero-section__title {
@@ -92,7 +95,7 @@ import arrowDownIcon from "@public/images/vector/icon/arrow-down.svg";
 		background: var(--colors-light-salmon-50);
 		display: flex;
 		flex-direction: row;
-		column-gap: 16rem;
+		column-gap: clamp(10rem, 2.8vw, 16rem);
 		align-items: center;
 		width: 100%;
 		max-width: 343rem;
@@ -111,8 +114,8 @@ import arrowDownIcon from "@public/images/vector/icon/arrow-down.svg";
 	}
 
 	.link__icon {
-		width: 16rem;
-		height: 17rem;
+		width: 24rem;
+		height: 25rem;
 		flex: 0 0 auto;
 	}
 
@@ -174,12 +177,14 @@ import arrowDownIcon from "@public/images/vector/icon/arrow-down.svg";
 	}
 
 	.hero-section__image {
+		display: block;
 		width: 100%;
 		max-width: 343rem;
 		height: 371rem;
 		border-radius: 7rem;
 		background: var(--colors-neutral-900);
 		object-fit: cover;
+		margin: 0 auto;
 	}
 
 	.hero-section__image-pattern {
