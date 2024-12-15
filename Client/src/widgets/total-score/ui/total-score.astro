@@ -1,0 +1,107 @@
+---
+import { Image } from "astro:assets";
+
+import man1image from "@public/images/raster/persons/man-1.jpg";
+import man2image from "@public/images/raster/persons/man-2.jpg";
+import man3image from "@public/images/raster/persons/man-3.jpg";
+import startIcon from "@public/images/vector/icon/star.svg";
+---
+
+<div class="total-score">
+	<ul class="total-score__users-image-list users-image-list">
+		<li class="users-image-list__item">
+			<Image class="total-score__image" src={man1image} alt="Smiling asian man" width="40" height="40"/>
+		</li>
+		<li class="users-image-list__item">
+			<Image class="total-score__image" src={man2image} alt="Smiling caucasian man" width="40" height="40"/>
+		</li>
+		<li class="users-image-list__item">
+			<Image class="total-score__image" src={man3image} alt="Smiling afro american man" width="40" height="40"/>
+		</li>
+	</ul>
+	<div class="total-score__average-score">
+		<ol class="score-list">
+			<li class="score-list__item">
+				<Image class="score__icon" src={startIcon} alt="" width="16" height="15"/>
+			</li>
+			<li class="score-list__item">
+				<Image class="score__icon" src={startIcon} alt="" width="16" height="15"/>
+			</li>
+			<li class="score-list__item">
+				<Image class="score__icon" src={startIcon} alt="" width="16" height="15"/>
+			</li>
+			<li class="score-list__item">
+				<Image class="score__icon" src={startIcon} alt="" width="16" height="15"/>
+			</li>
+			<li class="score-list__item">
+				<Image class="score__icon" src={startIcon} alt="" width="16" height="15"/>
+			</li>
+		</ol>
+		<p class="total-score__active-users-count">200+ developers joined already</p>
+	</div>
+</div>
+
+<style lang="less">
+	.total-score {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		column-gap: 12rem;
+		margin-top: 20rem;
+	}
+
+	.total-score__users-image-list {
+		position: relative;
+	}
+
+	.users-image-list {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+
+	.users-image-list__item {
+		margin-right: -5rem;
+		flex: 0 0 auto;
+	}
+
+	.total-score__image {
+		width: 40rem;
+		height: 40rem;
+		background-color: #fff;
+		border: 2rem solid #fff;
+		border-radius: 50%;
+		object-fit: cover;
+	}
+
+	.total-score__average-score {
+		display: flex;
+		flex-direction: column;
+		row-gap: 9rem;
+	}
+
+	.score-list {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		column-gap: 8rem;
+	}
+
+	.score-list__item {
+		flex: 0 0 auto;
+	}
+
+	.score__icon {
+		width: 16rem;
+		height: 15rem;
+	}
+
+	.total-score__active-users-count {
+		font-family: var(--font-family), sans-serif;
+		font-weight: 400;
+		font-size: 14rem;
+		line-height: 120%;
+		letter-spacing: -0.07em;
+		color: var(--colors-neutral-700);
+	}
+</style>
