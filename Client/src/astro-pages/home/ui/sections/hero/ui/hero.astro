@@ -36,10 +36,10 @@ import arrowDownIcon from "@public/images/vector/icon/arrow-down.svg";
 		</div>
 	</div>
 	<div class="hero-section__image-wrapper">
-		<Image class="hero-section__image" src={heroImage} alt="Bunch of persons reading books in library" width="343" height="371"/>
+		<Image class="hero-section__image" src={heroImage} alt="Bunch of persons reading books in library" />
 	</div>
 	<div class="hero-section__image-pattern"></div>
-	<div class="hero-section__image-glow"></div>
+	<div class="hero-section__glow"></div>
 </section>
 
 <style lang="less">
@@ -53,6 +53,11 @@ import arrowDownIcon from "@public/images/vector/icon/arrow-down.svg";
 		background: var(--colors-neutral-50);
 		margin-top: -108rem;
 		overflow: hidden;
+
+		@media (width >= 768px) {
+			padding: 132rem 32rem 80rem 32rem;
+			margin-top: -132rem;
+		}
 	}
 
 	.hero-section__content {
@@ -62,6 +67,10 @@ import arrowDownIcon from "@public/images/vector/icon/arrow-down.svg";
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+
+		@media (width >= 768px) {
+			align-items: flex-start;
+		}
 	}
 
 	.hero-section__title {
@@ -75,6 +84,11 @@ import arrowDownIcon from "@public/images/vector/icon/arrow-down.svg";
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 		margin-bottom: 24rem;
+
+		@media (width >= 768px) {
+			font-size: 62rem;
+			letter-spacing: -0.03em;
+		}
 	}
 
 	.hero-section__text {
@@ -100,6 +114,12 @@ import arrowDownIcon from "@public/images/vector/icon/arrow-down.svg";
 		width: 100%;
 		max-width: 343rem;
 		max-height: 64rem;
+
+		@media (width >= 768px) {
+			max-width: 380rem;
+			padding: 20.5rem 24rem 20.5rem 24rem;
+			column-gap: 16rem;
+		}
 	}
 
 	.link__text {
@@ -111,6 +131,10 @@ import arrowDownIcon from "@public/images/vector/icon/arrow-down.svg";
 		color: var(--colors-neutral-900);
 		text-transform: uppercase;
 		flex: 0 0 auto;
+
+		@media (width >= 768px) {
+			font-size: 18rem;
+		}
 	}
 
 	.link__icon {
@@ -185,6 +209,14 @@ import arrowDownIcon from "@public/images/vector/icon/arrow-down.svg";
 		background: var(--colors-neutral-900);
 		object-fit: cover;
 		margin: 0 auto;
+
+		@media (width >= 768px) {
+			border-radius: 16rem;
+			height: 798rem;
+			margin: unset;
+			width: 100%;
+			max-width: unset;
+		}
 	}
 
 	.hero-section__image-pattern {
@@ -195,14 +227,25 @@ import arrowDownIcon from "@public/images/vector/icon/arrow-down.svg";
 		height: 820rem;
 		background: url("/images/vector/background-pattern-light.svg") repeat;
 		z-index: 1;
+
+		@media (width >= 768px) {
+			height: 1565rem;
+		}
 	}
 
-	.hero-section__image-glow {
+	.hero-section__glow {
 		position: absolute;
 		top: 720rem;
-		right: 555rem;
-		background: url("/images/vector/background-glow-light.svg") no-repeat;
+		left: 555rem;
 		width: 684rem;
 		height: 684rem;
+		border-radius: 100%;
+		background-color: #9cc9da;
+		filter: blur(200px);
+
+		@media (width >= 768px) {
+			top: 1181rem;
+			left: 394rem;
+		}
 	}
 </style>
