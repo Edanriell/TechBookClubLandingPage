@@ -58,6 +58,16 @@ import arrowDownIcon from "@public/images/vector/icon/arrow-down.svg";
 			padding: 132rem 32rem 80rem 32rem;
 			margin-top: -132rem;
 		}
+
+		@media (width >= 1440px) {
+			padding: 148rem 135rem 80rem 135rem;
+			margin-top: -148rem;
+			flex-direction: row;
+			align-items: center;
+			row-gap: unset;
+			column-gap: 64rem;
+			justify-content: center;
+		}
 	}
 
 	.hero-section__content {
@@ -70,6 +80,10 @@ import arrowDownIcon from "@public/images/vector/icon/arrow-down.svg";
 
 		@media (width >= 768px) {
 			align-items: flex-start;
+		}
+
+		@media (width >= 1440px) {
+			flex: 0 0 570rem;
 		}
 	}
 
@@ -198,6 +212,11 @@ import arrowDownIcon from "@public/images/vector/icon/arrow-down.svg";
 		position: relative;
 		flex: 0 0 auto;
 		z-index: 2;
+
+		@media (width >= 1440px) {
+			flex: 0 0 auto;
+			max-width: 536rem;
+		}
 	}
 
 	.hero-section__image {
@@ -217,6 +236,13 @@ import arrowDownIcon from "@public/images/vector/icon/arrow-down.svg";
 			width: 100%;
 			max-width: unset;
 		}
+
+		@media (width >= 1440px) {
+			width: 100%;
+			height: 606rem;
+			max-width: 536rem;
+			border-radius: 12rem;
+		}
 	}
 
 	.hero-section__image-pattern {
@@ -230,6 +256,10 @@ import arrowDownIcon from "@public/images/vector/icon/arrow-down.svg";
 
 		@media (width >= 768px) {
 			height: 1565rem;
+		}
+
+		@media (width >= 1440px) {
+			height: 820rem;
 		}
 	}
 
@@ -246,6 +276,11 @@ import arrowDownIcon from "@public/images/vector/icon/arrow-down.svg";
 		@media (width >= 768px) {
 			top: 1181rem;
 			left: 394rem;
+		}
+
+		@media (width >= 1440px) {
+			top: 376rem;
+			left: 1228rem;
 		}
 	}
 </style>
