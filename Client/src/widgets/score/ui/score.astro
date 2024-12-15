@@ -1,0 +1,39 @@
+---
+import { Image } from "astro:assets";
+
+import startIcon from "@public/images/vector/icon/star.svg";
+
+interface Props {
+	count: 1 | 2 | 3 | 4 | 5;
+}
+
+const { count } = Astro.props;
+
+const starsCount = Math.max(1, Math.min(5, count));
+---
+
+<ol class="score-list">
+	{Array.from({ length: starsCount }).map(() => (
+			<li class="score-list__item">
+				<Image class="score-list__score-icon" src={startIcon} alt="" width="16" height="15"/>
+			</li>
+	))}
+</ol>
+
+<style lang="less">
+	.score-list {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		column-gap: 8rem;
+	}
+
+	.score-list__item {
+		flex: 0 0 auto;
+	}
+
+	.score-list__score-icon {
+		width: 16rem;
+		height: 15rem;
+	}
+</style>
