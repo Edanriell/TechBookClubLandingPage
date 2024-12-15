@@ -1,11 +1,9 @@
 ---
 import { Image } from "astro:assets";
 
+import TotalScore from "@widgets/total-score/ui/total-score.astro";
+
 import heroImage from "@public/images/raster/hero.jpg"
-import man1image from "@public/images/raster/persons/man-1.jpg";
-import man2image from "@public/images/raster/persons/man-2.jpg";
-import man3image from "@public/images/raster/persons/man-3.jpg";
-import startIcon from "@public/images/vector/icon/star.svg";
 import arrowDownIcon from "@public/images/vector/icon/arrow-down.svg";
 ---
 
@@ -17,23 +15,7 @@ import arrowDownIcon from "@public/images/vector/icon/arrow-down.svg";
 			<span class="link__text">Review membership options</span>
 			<Image class="link__icon" src={arrowDownIcon} alt="" width="24" height="25"/>
 		</a>
-		<div class="review-group">
-			<div class="review-group__image-group">
-				<Image class="review-group__image" src={man1image} alt="Smiling asian man" width="40" height="40"/>
-				<Image class="review-group__image" src={man2image} alt="Smiling caucasian man" width="40" height="40"/>
-				<Image class="review-group__image" src={man3image} alt="Smiling afro american man" width="40" height="40"/>
-			</div>
-			<div class="review-group__review-content">
-				<div class="rating">
-					<Image class="rating__icon" src={startIcon} alt="" width="16" height="15"/>
-					<Image class="rating__icon" src={startIcon} alt="" width="16" height="15"/>
-					<Image class="rating__icon" src={startIcon} alt="" width="16" height="15"/>
-					<Image class="rating__icon" src={startIcon} alt="" width="16" height="15"/>
-					<Image class="rating__icon" src={startIcon} alt="" width="16" height="15"/>
-				</div>
-				<p class="review-group__review-text">200+ developers joined already</p>
-			</div>
-		</div>
+		<TotalScore />
 	</div>
 	<div class="hero-section__image-wrapper">
 		<Image class="hero-section__image" src={heroImage} alt="Bunch of persons reading books in library" />
@@ -155,57 +137,6 @@ import arrowDownIcon from "@public/images/vector/icon/arrow-down.svg";
 		width: 24rem;
 		height: 25rem;
 		flex: 0 0 auto;
-	}
-
-	.review-group {
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		column-gap: 12rem;
-		margin-top: 20rem;
-	}
-
-	.review-group__image-group {
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-	}
-
-	.review-group__image {
-		width: 40rem;
-		height: 40rem;
-		margin-right: -5rem;
-		background-color: #fff;
-		border: 2rem solid #fff;
-		border-radius: 50%;
-		flex: 0 0 auto;
-	}
-
-	.review-group__review-content {
-		display: flex;
-		flex-direction: column;
-		row-gap: 9rem;
-	}
-
-	.rating {
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		column-gap: 8rem;
-	}
-
-	.rating__icon {
-		width: 16rem;
-		height: 15rem;
-	}
-
-	.review-group__review-text {
-		font-family: var(--font-family), sans-serif;
-		font-weight: 400;
-		font-size: 14rem;
-		line-height: 120%;
-		letter-spacing: -0.07em;
-		color: var(--colors-neutral-700);
 	}
 
 	.hero-section__image-wrapper {
