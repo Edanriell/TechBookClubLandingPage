@@ -1,3 +1,97 @@
 ---
+import { Image } from "astro:assets";
 
+import communityImage from "@public/images/raster/community.jpg";
+import typeScriptIcon from "@public/images/vector/icon/typescript.svg";
+import githubIcon from "@public/images/vector/icon/github.svg";
+import reactIcon from "@public/images/vector/icon/react.svg";
 ---
+
+<section class="community-section">
+	<div class="community-section__image-wrapper">
+		<Image class="community-section__image" src={communityImage} alt="People reading and actively discussing books"/>
+		<div class="community-section__icon-wrapper icon-wrapper icon-wrapper--type--typescript">
+			<Image class="icon-wrapper__icon icon-wrapper__icon--type--typescript" src={typeScriptIcon} alt="" width="35" height="35"/>
+		</div>
+		<div class="community-section__icon-wrapper icon-wrapper icon-wrapper--type--github">
+			<Image class="icon-wrapper__icon icon-wrapper__icon--type--github" src={githubIcon} alt="" width="33" height="32"/>
+		</div>
+		<div class="community-section__icon-wrapper icon-wrapper icon-wrapper--type--react">
+			<Image class="icon-wrapper__icon icon-wrapper__icon--type--react" src={reactIcon} alt="" width="30" height="27"/>
+		</div>
+	</div>
+	<div class="community-section__content">
+		<h2 class="community-section__title">Not your average book <span class="community-section__title--type--decorated">club</span></h2>
+		<p class="community-section__text">Connect with a community that speaks your language - from <strong class="community-section__text--type--highlighted">Python</strong> to <strong class="community-section__text--type--highlighted">TypeScript</strong> and everything in between. Our discussions blend technical depth with practical applications.</p>
+	</div>
+</section>
+
+<style lang="less">
+	.community-section {
+
+	}
+
+	.community-section__image-wrapper {
+
+	}
+
+	.community-section__image {
+
+	}
+
+	.community-section__icon-wrapper {
+
+	}
+
+	.icon-wrapper {
+
+	}
+
+	.icon-wrapper--type--typescript {
+
+	}
+
+	.icon-wrapper--type--github {
+
+	}
+
+	.icon-wrapper--type--react {
+
+	}
+
+	.icon-wrapper__icon {
+
+	}
+
+	.icon-wrapper__icon--type--typescript {
+
+	}
+
+	.icon-wrapper__icon--type--github {
+
+	}
+
+	.icon-wrapper__icon--type--react {
+
+	}
+
+	.community-section__content {
+
+	}
+
+	.community-section__title {
+
+	}
+
+	.community-section__title--type--decorated {
+
+	}
+
+	.community-section__text {
+
+	}
+
+	.community-section__text--type--highlighted {
+
+	}
+</style>
