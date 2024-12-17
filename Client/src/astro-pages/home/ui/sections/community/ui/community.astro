@@ -40,12 +40,25 @@ import orangeOval from "@public/images/vector/icon/orange-oval.svg";
 		row-gap: 40rem;
 		position: relative;
 		margin: 64rem 16rem;
+
+		@media (width >= 768px) {
+			margin: 80rem 32rem;
+		}
 	}
 
 	.community-section__image-wrapper {
 		position: relative;
 		flex: 0 0 auto;
 		margin: 0 auto;
+
+		@media(width >= 768px) {
+			width: 100%;
+		}
+
+		@media (width >= 1440px) {
+			width: unset;
+			margin: unset;
+		}
 	}
 
 	.community-section__image {
@@ -55,6 +68,12 @@ import orangeOval from "@public/images/vector/icon/orange-oval.svg";
 		max-width: 343rem;
 		background: var(--colors-neutral-900);
 		object-fit: cover;
+
+		@media (width >= 768px) {
+			border-radius: 15rem;
+			max-width: unset;
+			height: 653rem;
+		}
 	}
 
 	.community-section__icon-wrapper {
@@ -63,34 +82,66 @@ import orangeOval from "@public/images/vector/icon/orange-oval.svg";
 
 	.icon-wrapper {
 		display: none;
+
+		@media (width >= 768px) {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
 	}
 
 	.icon-wrapper--type--typescript {
-
+		border-radius: 50rem;
+		width: 72rem;
+		height: 72rem;
+		background: #007acc;
+		position: absolute;
+		bottom: 116.71rem;
+		right: 77.5rem;
 	}
 
 	.icon-wrapper--type--github {
-
+		border-radius: 38rem;
+		width: 55rem;
+		height: 55rem;
+		background: #161614;
+		position: absolute;
+		bottom: 50.71rem;
+		right: 115rem;
 	}
 
 	.icon-wrapper--type--react {
-
+		border-radius: 30rem;
+		width: 44rem;
+		height: 44rem;
+		background: #00d8ff;
+		position: absolute;
+		bottom: 62.71rem;
+		right: 50.44rem;
 	}
 
 	.icon-wrapper__icon {
-
+		position: relative;
+		flex: 0 0 auto;
 	}
 
 	.icon-wrapper__icon--type--typescript {
-
+		width: 35rem;
+		height: 35rem;
+		color: var(--colors-neutral-0);
 	}
 
 	.icon-wrapper__icon--type--github {
-
+		width: 33rem;
+		height: 32rem;
+		color: var(--colors-neutral-0);
+		margin-bottom: 2rem;
 	}
 
 	.icon-wrapper__icon--type--react {
-
+		width: 30rem;
+		height: 27rem;
+		color: var(--colors-neutral-0);
 	}
 
 	.community-section__content {
@@ -105,6 +156,11 @@ import orangeOval from "@public/images/vector/icon/orange-oval.svg";
 		letter-spacing: -0.06em;
 		color: var(--colors-neutral-900);
 		margin-bottom: 24rem;
+
+		@media (width >= 768px) {
+			font-size: 50rem;
+			letter-spacing: -0.04em;
+		}
 	}
 
 	.community-section__title--type--decorated {
@@ -119,6 +175,13 @@ import orangeOval from "@public/images/vector/icon/orange-oval.svg";
 			background-size: 110rem 44rem;
 			width: 110rem;
 			height: 44rem;
+
+			@media (width >= 768px) {
+				background-size: 160rem 65rem;
+				width: 160rem;
+				height: 65rem;
+				left: -20rem;
+			}
 		}
 	}
 
