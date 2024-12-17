@@ -1,3 +1,243 @@
 ---
+import { Image } from "astro:assets";
 
+import communityImage from "@public/images/raster/community.jpg";
+import typeScriptIcon from "@public/images/vector/icon/typescript.svg";
+import githubIcon from "@public/images/vector/icon/github.svg";
+import reactIcon from "@public/images/vector/icon/react.svg";
 ---
+
+<section class="community-section">
+	<div class="community-section__image-wrapper">
+		<Image class="community-section__image" src={communityImage} alt="People reading and actively discussing books"/>
+		<div class="community-section__icon-wrapper icon-wrapper icon-wrapper--type--typescript">
+			<Image class="icon-wrapper__icon icon-wrapper__icon--type--typescript" src={typeScriptIcon} alt="" width="35" height="35"/>
+		</div>
+		<div class="community-section__icon-wrapper icon-wrapper icon-wrapper--type--github">
+			<Image class="icon-wrapper__icon icon-wrapper__icon--type--github" src={githubIcon} alt="" width="33" height="32"/>
+		</div>
+		<div class="community-section__icon-wrapper icon-wrapper icon-wrapper--type--react">
+			<Image class="icon-wrapper__icon icon-wrapper__icon--type--react" src={reactIcon} alt="" width="30" height="27"/>
+		</div>
+	</div>
+	<div class="community-section__content">
+		<h2 class="community-section__title">
+			Not your average book
+			<span class="community-section__title--type--decorated">club</span>
+		</h2>
+		<p class="community-section__text">Connect with a community that speaks your language - from <strong class="community-section__text--type--highlighted">Python</strong> to <strong class="community-section__text--type--highlighted">TypeScript</strong> and everything in between. Our discussions blend technical depth with practical applications.</p>
+	</div>
+</section>
+
+<style lang="less">
+	.community-section {
+		display: flex;
+		flex-direction: column-reverse;
+		row-gap: 40rem;
+		position: relative;
+		margin: 64rem 16rem;
+
+		@media (width >= 768px) {
+			margin: 80rem 32rem;
+		}
+
+		@media (width >= 1440px) {
+			margin: 120rem 135rem;
+			flex-direction: row-reverse;
+			align-items: center;
+			row-gap: unset;
+			column-gap: 80rem;
+			justify-content: center;
+		}
+	}
+
+	.community-section__image-wrapper {
+		position: relative;
+		flex: 0 0 auto;
+		margin: 0 auto;
+
+		@media(width >= 768px) {
+			width: 100%;
+		}
+
+		@media (width >= 1440px) {
+			width: unset;
+			margin: unset;
+		}
+	}
+
+	.community-section__image {
+		border-radius: 7rem;
+		width: 100%;
+		height: 318rem;
+		max-width: 343rem;
+		background: var(--colors-neutral-900);
+		object-fit: cover;
+
+		@media (width >= 768px) {
+			border-radius: 15rem;
+			max-width: unset;
+			height: 653rem;
+		}
+
+		@media (width >= 1440px) {
+			border-radius: 12rem;
+			max-width: 560rem;
+			height: 520rem;
+		}
+	}
+
+	.community-section__icon-wrapper {
+		position: relative;
+	}
+
+	.icon-wrapper {
+		display: none;
+
+		@media (width >= 768px) {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+	}
+
+	.icon-wrapper--type--typescript {
+		border-radius: 50rem;
+		width: 72rem;
+		height: 72rem;
+		background: #007acc;
+		position: absolute;
+		bottom: 116.71rem;
+		right: 77.5rem;
+
+		@media (width >= 1440px) {
+			right: unset;
+			bottom: 97rem;
+			left: -60rem;
+		}
+	}
+
+	.icon-wrapper--type--github {
+		border-radius: 38rem;
+		width: 55rem;
+		height: 55rem;
+		background: #161614;
+		position: absolute;
+		bottom: 50.71rem;
+		right: 115rem;
+
+		@media (width >= 1440px) {
+			right: unset;
+			bottom: 31rem;
+			left: -80rem;
+		}
+	}
+
+	.icon-wrapper--type--react {
+		border-radius: 30rem;
+		width: 44rem;
+		height: 44rem;
+		background: #00d8ff;
+		position: absolute;
+		bottom: 62.71rem;
+		right: 50.44rem;
+
+		@media (width >= 1440px) {
+			right: unset;
+			bottom: 43rem;
+			left: -4rem;
+		}
+	}
+
+	.icon-wrapper__icon {
+		position: relative;
+		flex: 0 0 auto;
+	}
+
+	.icon-wrapper__icon--type--typescript {
+		width: 35rem;
+		height: 35rem;
+		color: var(--colors-neutral-0);
+	}
+
+	.icon-wrapper__icon--type--github {
+		width: 33rem;
+		height: 32rem;
+		color: var(--colors-neutral-0);
+		margin-bottom: 2rem;
+	}
+
+	.icon-wrapper__icon--type--react {
+		width: 30rem;
+		height: 27rem;
+		color: var(--colors-neutral-0);
+	}
+
+	.community-section__content {
+		flex: 0 0 auto;
+
+		@media (width >= 1440px) {
+			flex: 0 0 530rem;
+		}
+	}
+
+	.community-section__title {
+		font-family: var(--font-family);
+		font-weight: 600;
+		font-size: 34rem;
+		line-height: 130%;
+		letter-spacing: -0.06em;
+		color: var(--colors-neutral-900);
+		margin-bottom: 24rem;
+
+		@media (width >= 768px) {
+			font-size: 50rem;
+			letter-spacing: -0.04em;
+		}
+	}
+
+	.community-section__title--type--decorated {
+		position: relative;
+
+		&::after {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: -11rem;
+			background: url("../../images/vector/orange-oval.svg") no-repeat;
+			background-size: 110rem 44rem;
+			width: 110rem;
+			height: 44rem;
+
+			@media (width >= 768px) {
+				background-size: 160rem 65rem;
+				width: 160rem;
+				height: 65rem;
+				left: -20rem;
+			}
+
+			@media (width >= 1440px) {
+				background-size: 160rem 66rem;
+				height: 66rem;
+				left: -20rem;
+			}
+		}
+	}
+
+	.community-section__text {
+		font-family: var(--second-family), sans-serif;
+		font-weight: 400;
+		font-size: 20rem;
+		line-height: 140%;
+		letter-spacing: -0.03em;
+		color: var(--colors-neutral-700);
+
+		@media (width >= 1440px) {
+			margin-right: 10rem;
+		}
+	}
+
+	.community-section__text--type--highlighted {
+		font-weight: 600;
+	}
+</style>
