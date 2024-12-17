@@ -5,7 +5,6 @@ import communityImage from "@public/images/raster/community.jpg";
 import typeScriptIcon from "@public/images/vector/icon/typescript.svg";
 import githubIcon from "@public/images/vector/icon/github.svg";
 import reactIcon from "@public/images/vector/icon/react.svg";
-import orangeOval from "@public/images/vector/icon/orange-oval.svg";
 ---
 
 <section class="community-section">
@@ -24,10 +23,7 @@ import orangeOval from "@public/images/vector/icon/orange-oval.svg";
 	<div class="community-section__content">
 		<h2 class="community-section__title">
 			Not your average book
-			<span class="community-section__title--type--decorated">
-
-				club
-			</span>
+			<span class="community-section__title--type--decorated">club</span>
 		</h2>
 		<p class="community-section__text">Connect with a community that speaks your language - from <strong class="community-section__text--type--highlighted">Python</strong> to <strong class="community-section__text--type--highlighted">TypeScript</strong> and everything in between. Our discussions blend technical depth with practical applications.</p>
 	</div>
@@ -43,6 +39,15 @@ import orangeOval from "@public/images/vector/icon/orange-oval.svg";
 
 		@media (width >= 768px) {
 			margin: 80rem 32rem;
+		}
+
+		@media (width >= 1440px) {
+			margin: 120rem 135rem;
+			flex-direction: row-reverse;
+			align-items: center;
+			row-gap: unset;
+			column-gap: 80rem;
+			justify-content: center;
 		}
 	}
 
@@ -74,6 +79,12 @@ import orangeOval from "@public/images/vector/icon/orange-oval.svg";
 			max-width: unset;
 			height: 653rem;
 		}
+
+		@media (width >= 1440px) {
+			border-radius: 12rem;
+			max-width: 560rem;
+			height: 520rem;
+		}
 	}
 
 	.community-section__icon-wrapper {
@@ -98,6 +109,12 @@ import orangeOval from "@public/images/vector/icon/orange-oval.svg";
 		position: absolute;
 		bottom: 116.71rem;
 		right: 77.5rem;
+
+		@media (width >= 1440px) {
+			right: unset;
+			bottom: 97rem;
+			left: -60rem;
+		}
 	}
 
 	.icon-wrapper--type--github {
@@ -108,6 +125,12 @@ import orangeOval from "@public/images/vector/icon/orange-oval.svg";
 		position: absolute;
 		bottom: 50.71rem;
 		right: 115rem;
+
+		@media (width >= 1440px) {
+			right: unset;
+			bottom: 31rem;
+			left: -80rem;
+		}
 	}
 
 	.icon-wrapper--type--react {
@@ -118,6 +141,12 @@ import orangeOval from "@public/images/vector/icon/orange-oval.svg";
 		position: absolute;
 		bottom: 62.71rem;
 		right: 50.44rem;
+
+		@media (width >= 1440px) {
+			right: unset;
+			bottom: 43rem;
+			left: -4rem;
+		}
 	}
 
 	.icon-wrapper__icon {
@@ -146,6 +175,10 @@ import orangeOval from "@public/images/vector/icon/orange-oval.svg";
 
 	.community-section__content {
 		flex: 0 0 auto;
+
+		@media (width >= 1440px) {
+			flex: 0 0 530rem;
+		}
 	}
 
 	.community-section__title {
@@ -182,6 +215,12 @@ import orangeOval from "@public/images/vector/icon/orange-oval.svg";
 				height: 65rem;
 				left: -20rem;
 			}
+
+			@media (width >= 1440px) {
+				background-size: 160rem 66rem;
+				height: 66rem;
+				left: -20rem;
+			}
 		}
 	}
 
@@ -192,6 +231,10 @@ import orangeOval from "@public/images/vector/icon/orange-oval.svg";
 		line-height: 140%;
 		letter-spacing: -0.03em;
 		color: var(--colors-neutral-700);
+
+		@media (width >= 1440px) {
+			margin-right: 10rem;
+		}
 	}
 
 	.community-section__text--type--highlighted {
