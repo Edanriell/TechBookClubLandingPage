@@ -1,23 +1,22 @@
 ---
 import { Image } from "astro:assets";
 
+import Icon from "@shared/ui/icon/ui/icon.astro";
+
 import communityImage from "@public/images/raster/community.jpg";
-import typeScriptIcon from "@public/images/vector/icon/typescript.svg";
-import githubIcon from "@public/images/vector/icon/github.svg";
-import reactIcon from "@public/images/vector/icon/react.svg";
 ---
 
 <section class="community-section">
 	<div class="community-section__image-wrapper">
 		<Image class="community-section__image" src={communityImage} alt="People reading and actively discussing books"/>
 		<div class="community-section__icon-wrapper icon-wrapper icon-wrapper--type--typescript">
-			<Image class="icon-wrapper__icon icon-wrapper__icon--type--typescript" src={typeScriptIcon} alt="" width="35" height="35"/>
+			<Icon iconType="typescript" width={35} height={35} />
 		</div>
 		<div class="community-section__icon-wrapper icon-wrapper icon-wrapper--type--github">
-			<Image class="icon-wrapper__icon icon-wrapper__icon--type--github" src={githubIcon} alt="" width="33" height="32"/>
+			<Icon iconType="github" width={33} height={32} />
 		</div>
 		<div class="community-section__icon-wrapper icon-wrapper icon-wrapper--type--react">
-			<Image class="icon-wrapper__icon icon-wrapper__icon--type--react" src={reactIcon} alt="" width="30" height="27"/>
+			<Icon iconType="react" width={30} height={27} />
 		</div>
 	</div>
 	<div class="community-section__content">
@@ -147,30 +146,6 @@ import reactIcon from "@public/images/vector/icon/react.svg";
 			bottom: 43rem;
 			left: -4rem;
 		}
-	}
-
-	.icon-wrapper__icon {
-		position: relative;
-		flex: 0 0 auto;
-	}
-
-	.icon-wrapper__icon--type--typescript {
-		width: 35rem;
-		height: 35rem;
-		color: var(--colors-neutral-0);
-	}
-
-	.icon-wrapper__icon--type--github {
-		width: 33rem;
-		height: 32rem;
-		color: var(--colors-neutral-0);
-		margin-bottom: 2rem;
-	}
-
-	.icon-wrapper__icon--type--react {
-		width: 30rem;
-		height: 27rem;
-		color: var(--colors-neutral-0);
 	}
 
 	.community-section__content {

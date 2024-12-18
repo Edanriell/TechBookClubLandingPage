@@ -1,27 +1,47 @@
 ---
 import { Image } from "astro:assets";
 
-import butterflyLogotypeImage from "@public/images/vector/icon/butterfly.svg";
-import linkedInLogotypeImage from "@public/images/vector/icon/linkedin.svg";
+import butterflyLogotypeIcon from "@public/images/vector/icon/butterfly.svg";
+import linkedInLogotypeIcon from "@public/images/vector/icon/linkedin.svg";
+import typeScriptLogotypeIcon from "@public/images/vector/icon/typescript.svg";
+import githubLogotypeIcon from "@public/images/vector/icon/github.svg";
+import reactLogotypeIcon from "@public/images/vector/icon/react.svg";
 
 import { type IconType, type Icon } from "./types";
 
 interface Props {
 	iconType: IconType;
+	width: number;
+	height: number;
 }
 
-const { iconType } = Astro.props;
+const { iconType, width, height } = Astro.props;
 
 const icons: Record<IconType, Icon> = {
 	butterfly: {
-		src: butterflyLogotypeImage,
+		src: butterflyLogotypeIcon,
 		alt: "Butterfly company logotype",
 		class: "icon icon--type--butterfly",
 	},
 	linkedin: {
-		src: linkedInLogotypeImage,
+		src: linkedInLogotypeIcon,
 		alt: "LinkedIn company logotype",
 		class: "icon icon--type--linkedin",
+	},
+	typescript: {
+		src: typeScriptLogotypeIcon,
+		alt: "TypeScript logotype",
+		class: "icon icon--type--typescript",
+	},
+	github: {
+		src: githubLogotypeIcon,
+		alt: "GitHub logotype",
+		class: "icon icon--type--github",
+	},
+	react: {
+		src: reactLogotypeIcon,
+		alt: "React logotype",
+		class: "icon icon--type--react",
 	},
 };
 
@@ -39,22 +59,45 @@ if (!icon) {
 			class={icon.class}
 			src={icon.src}
 			alt={icon.alt}
-			width="22"
-			height="22"
+			width={width}
+			height={height}
 	/>
 )}
 
 <style lang="less">
 	.icon {
-		width: 22rem;
-		height: 22rem;
+		position: relative;
+		flex: 0 0 auto;
 	}
 
 	.icon--type--butterfly {
+		width: 22rem;
+		height: 22rem;
 		color: #fff;
 	}
 
 	.icon--type--linkedin {
+		width: 22rem;
+		height: 22rem;
 		color: #fff;
+	}
+
+	.icon--type--typescript {
+		width: 35rem;
+		height: 35rem;
+		color: var(--colors-neutral-0);
+	}
+
+	.icon--type--github {
+		width: 33rem;
+		height: 32rem;
+		color: var(--colors-neutral-0);
+		margin-bottom: 2rem;
+	}
+
+	.icon--type--react {
+		width: 30rem;
+		height: 27rem;
+		color: var(--colors-neutral-0);
 	}
 </style>

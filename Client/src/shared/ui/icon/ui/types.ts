@@ -1,4 +1,4 @@
-export type IconType = "butterfly" | "linkedin";
+export type IconType = "butterfly" | "linkedin" | "typescript" | "github" | "react";
 
 export type Icon = {
 	src: any;
