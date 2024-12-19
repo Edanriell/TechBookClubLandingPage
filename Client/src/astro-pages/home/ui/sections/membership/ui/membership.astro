@@ -100,6 +100,11 @@ import checkmarkIcon from "@public/images/vector/icon/checkmark.svg";
 			font-size: 50rem;
 			letter-spacing: -0.04em;
 		}
+
+		@media (width >= 1440px) {
+			text-align: center;
+			margin-bottom: 64rem;
+		}
 	}
 
 	.membership-section__membership-options-list {
@@ -118,6 +123,11 @@ import checkmarkIcon from "@public/images/vector/icon/checkmark.svg";
 			align-items: flex-start;
 			flex-direction: row;
 		}
+
+		@media (width >= 1440px) {
+			align-items: center;
+			justify-content: center;
+		}
 	}
 
 	.membership-options-list__item {
@@ -127,6 +137,11 @@ import checkmarkIcon from "@public/images/vector/icon/checkmark.svg";
 
 		@media (width >= 768px) {
 			max-width: clamp(331rem,43.1558vw,340rem);
+		}
+
+		@media (width >= 1440px) {
+			width: unset;
+			max-width: unset;
 		}
 	}
 
@@ -165,10 +180,19 @@ import checkmarkIcon from "@public/images/vector/icon/checkmark.svg";
 
 	.membership-option--size--medium {
 		padding: 24rem;
+
+		@media (width >= 1440px) {
+			width: 286rem;
+		}
 	}
 
 	.membership-option--size--large {
 		padding: 24rem;
+
+		@media (width >= 1440px) {
+			padding: 40rem 24rem;
+			width: 350rem;
+		}
 	}
 
 	.membership-option__type {
@@ -249,6 +273,10 @@ import checkmarkIcon from "@public/images/vector/icon/checkmark.svg";
 		line-height: 140%;
 		letter-spacing: -0.03em;
 		color: var(--colors-neutral-700);
+
+		@media (width >= 1440px) {
+			letter-spacing: -0.02em;
+		}
 	}
 
 	.button {
@@ -271,6 +299,7 @@ import checkmarkIcon from "@public/images/vector/icon/checkmark.svg";
 
 		@media (width >= 768px) {
 			font-size: 18rem;
+			max-height: 63rem;
 		}
 	}
 </style>
