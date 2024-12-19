@@ -1,3 +1,255 @@
 ---
+import { Image } from "astro:assets";
 
+import checkmarkIcon from "@public/images/vector/icon/checkmark.svg";
 ---
+
+<section class="membership-section">
+	<h2 class="membership-section__title">Membership options</h2>
+	<ul class="membership-section__membership-options-list membership-options-list">
+		<li class="membership-options-list__item">
+			<article class="membership-options-list__membership-option membership-option membership-option--type--ghost membership-option--size--medium">
+				<h3 class="membership-option__type">Starter</h3>
+				<p class="membership-option__pricing"><strong>$19</strong>/month</p>
+				<ul class="membership-option__membership-benefits-list membership-benefits-list">
+					<li class="membership-benefits-list__item">
+						<div class="membership-benefits-list__icon-wrapper">
+							<Image class="membership-benefits-list__icon" src={checkmarkIcon} alt="" width="15" height="15" />
+						</div>
+						<p class="membership-benefits-list__item-description">1 book/month</p>
+					</li>
+					<li class="membership-benefits-list__item">
+						<div class="membership-benefits-list__icon-wrapper">
+							<Image class="membership-benefits-list__icon" src={checkmarkIcon} alt="" width="15" height="15" />
+						</div>
+						<p class="membership-benefits-list__item-description">Online forums</p>
+					</li>
+				</ul>
+				<button class="button" type="button">Subscribe now</button>
+			</article>
+		</li>
+		<li class="membership-options-list__item">
+			<article class="membership-options-list__membership-option membership-option membership-option--type--colorful membership-option--size--large">
+				<h3 class="membership-option__type">Pro</h3>
+				<p class="membership-option__pricing"><strong>$29</strong>/month</p>
+				<ul class="membership-option__membership-benefits-list membership-benefits-list">
+					<li class="membership-benefits-list__item">
+						<div class="membership-benefits-list__icon-wrapper">
+							<Image class="membership-benefits-list__icon" src={checkmarkIcon} alt="" width="15" height="15" />
+						</div>
+						<p class="membership-benefits-list__item-description">2 books/month</p>
+					</li>
+					<li class="membership-benefits-list__item">
+						<div class="membership-benefits-list__icon-wrapper">
+							<Image class="membership-benefits-list__icon" src={checkmarkIcon} alt="" width="15" height="15" />
+						</div>
+						<p class="membership-benefits-list__item-description">Virtual meetups</p>
+					</li>
+				</ul>
+				<button class="button" type="button">Subscribe now</button>
+			</article>
+		</li>
+		<li class="membership-options-list__item">
+			<article class="membership-options-list__membership-option membership-option membership-option--type--ghost membership-option--size--medium">
+				<h3 class="membership-option__type">Enterprise</h3>
+				<p class="membership-option__pricing"><strong>Custom</strong></p>
+				<ul class="membership-option__membership-benefits-list membership-benefits-list">
+					<li class="membership-benefits-list__item">
+						<div class="membership-benefits-list__icon-wrapper">
+							<Image class="membership-benefits-list__icon" src={checkmarkIcon} alt="" width="15" height="15" />
+						</div>
+						<p class="membership-benefits-list__item-description">Team access</p>
+					</li>
+					<li class="membership-benefits-list__item">
+						<div class="membership-benefits-list__icon-wrapper">
+							<Image class="membership-benefits-list__icon" src={checkmarkIcon} alt="" width="15" height="15" />
+						</div>
+						<p class="membership-benefits-list__item-description">Private sessions</p>
+					</li>
+				</ul>
+				<button class="button" type="button">Subscribe now</button>
+			</article>
+		</li>
+	</ul>
+</section>
+
+<style lang="less">
+	.membership-section {
+		margin: 64rem 16rem;
+
+		@media (width >= 768px) {
+			margin: 80rem 32rem;
+		}
+
+		@media (width >= 1440px) {
+			margin: 120rem 135rem;
+		}
+	}
+
+	.membership-section__title {
+		font-family: var(--font-family), sans-serif;
+		font-weight: 600;
+		font-size: 34rem;
+		line-height: 130%;
+		letter-spacing: -0.06em;
+		color: var(--colors-neutral-900);
+		margin-bottom: 24rem;
+	}
+
+	.membership-section__membership-options-list {
+		position: relative;
+	}
+
+	.membership-options-list {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		row-gap: 24rem;
+	}
+
+	.membership-options-list__item {
+		position: relative;
+		flex: 0 0 auto;
+		width: 100%;
+	}
+
+	.membership-options-list__membership-option {
+		position: relative;
+	}
+
+	.membership-option {
+		position: relative;
+		overflow: hidden;
+	}
+
+	.membership-option--type--ghost {
+		border: 1rem solid var(--colors-neutral-200);
+		border-radius: 8rem;
+	}
+
+	.membership-option--type--colorful {
+		border: 1rem solid var(--colors-neutral-200);
+		border-radius: 8rem;
+		background: var(--colors-neutral-50);
+
+		&::before {
+			content: "";
+			border-radius: 100%;
+			background-color: #9cc9da;
+			filter: blur(200rem);
+			width: 684rem;
+			height: 684rem;
+			position: absolute;
+			top: 202rem;
+			left: 24rem;
+			z-index: 1;
+		}
+	}
+
+	.membership-option--size--medium {
+		padding: 24rem;
+	}
+
+	.membership-option--size--large {
+		padding: 24rem;
+	}
+
+	.membership-option__type {
+		font-family: var(--font-family), sans-serif;
+		font-weight: 600;
+		font-size: 24rem;
+		line-height: 110%;
+		letter-spacing: -0.04em;
+		color: var(--colors-neutral-900);
+		margin-bottom: 24rem;
+		z-index: 2;
+	}
+
+	.membership-option__pricing {
+		font-family: var(--second-family), sans-serif;
+		font-weight: 400;
+		font-size: 20rem;
+		line-height: 140%;
+		letter-spacing: -0.03em;
+		color: var(--colors-neutral-700);
+		padding-bottom: 24rem;
+		border-bottom: 1rem solid var(--colors-neutral-200);
+		margin-bottom: 24rem;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		column-gap: 8rem;
+		z-index: 2;
+
+		> strong {
+			font-family: var(--font-family), sans-serif;
+			font-weight: 600;
+			font-size: 34rem;
+			line-height: 130%;
+			letter-spacing: -0.03em;
+			color: var(--colors-neutral-900);
+		}
+	}
+
+	.membership-option__membership-benefits-list {
+		position: relative;
+		margin-bottom: 32rem;
+		z-index: 2;
+	}
+
+	.membership-benefits-list {
+		display: flex;
+		flex-direction: column;
+		row-gap: 16rem;
+	}
+
+	.membership-benefits-list__item {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		column-gap: 12rem;
+	}
+
+	.membership-benefits-list__icon-wrapper {
+		border: 1.71rem solid var(--colors-neutral-700);
+		border-radius: 3rem;
+		width: 24rem;
+		height: 24rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.membership-benefits-list__icon {
+		width: 13rem;
+		height: 13rem;
+	}
+
+	.membership-benefits-list__item-description {
+		font-family: var(--second-family), sans-serif;
+		font-weight: 400;
+		font-size: 20rem;
+		line-height: 140%;
+		letter-spacing: -0.03em;
+		color: var(--colors-neutral-700);
+	}
+
+	.button {
+		position: relative;
+		border: 2rem solid var(--colors-neutral-900);
+		border-radius: 8rem;
+		padding: 20rem 24rem;
+		max-height: 61rem;
+		background: var(--colors-light-salmon-50);
+		font-family: var(--font-family), sans-serif;
+		font-weight: 600;
+		font-size: 16rem;
+		line-height: 130%;
+		letter-spacing: -0.06em;
+		color: var(--colors-neutral-900);
+		width: 100%;
+		z-index: 2;
+		cursor: pointer;
+		text-transform: uppercase;
+	}
+</style>
