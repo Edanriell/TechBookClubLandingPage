@@ -1,3 +1,141 @@
 ---
 
 ---
+
+<section class="journey-section">
+	<h2 class="journey-section__title">Your tech reading journey</h2>
+	<ol class="journey-section__step-list step-list">
+		<li class="step-list__item">
+			Choose your membership tier
+		</li>
+		<li class="step-list__item">
+			Get your monthly book selection
+		</li>
+		<li class="step-list__item">
+			Join our discussion forums
+		</li>
+		<li class="step-list__item">
+			Attend exclusive meetups
+		</li>
+	</ol>
+</section>
+
+<style lang="less">
+	.journey-section {
+		position: relative;
+		display: none;
+		overflow: hidden;
+
+		@media (width >= 1440px) {
+			border-radius: 12rem;
+			padding: 80rem 60rem;
+			width: 100%;
+			max-width: 1170rem;;
+			background: var(--colors-neutral-50);
+			margin: 0 auto 120rem auto;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			row-gap: 64rem;
+		}
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: -2rem;
+			left: -12rem;
+			width: calc(100% + 12rem);
+			height: calc(100% + 2rem);
+			background: url("/images/vector/background-pattern-light.svg") repeat;
+		}
+
+		&::after {
+			content: "";
+			position: absolute;
+			width: 572rem;
+			height: 455rem;
+			border-radius: 100%;
+			background-color: #9cc9da;
+			filter: blur(200rem);
+			bottom: -160rem;
+			left: 798rem;
+		}
+	}
+
+	.journey-section__title {
+		position: relative;
+		font-family: var(--font-family), sans-serif;
+		font-weight: 600;
+		font-size: 50rem;
+		line-height: 120%;
+		letter-spacing: -0.04em;
+		text-align: center;
+		color: var(--colors-neutral-900);
+		max-width: 512rem;
+		z-index: 3;
+	}
+
+	.journey-section__step-list {
+		position: relative;
+		z-index: 3;
+	}
+
+	.step-list {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		column-gap: 48rem;
+		row-gap: 48rem;
+		flex-wrap: wrap;
+		counter-reset: step-counter;
+	}
+
+	.step-list__item {
+		position: relative;
+		flex: 0 0 226.5rem;
+		font-family: var(--font-family), sans-serif;
+		font-weight: 600;
+		font-size: 18rem;
+		line-height: 130%;
+		letter-spacing: -0.01em;
+		color: var(--colors-neutral-900);
+		display: flex;
+		flex-direction: column;
+		row-gap: 24rem;
+		counter-increment: step-counter;
+
+		&::before {
+			display: block;
+			content: counter(step-counter);
+			font-family: var(--font-family), sans-serif;
+			font-weight: 400;
+			font-size: 24rem;
+			line-height: 150%;
+			vertical-align: center;
+			letter-spacing: -0.01em;
+			color: var(--colors-neutral-900);
+			border: 2rem solid var(--colors-neutral-900);
+			border-radius: 4rem;
+			width: 40rem;
+			height: 40rem;
+			flex: 0 0 auto;
+			text-align: center;
+		}
+
+		&::after {
+			content: "";
+			position: absolute;
+			top: 0;
+			right: 2rem;
+			width: 80rem;
+			height: 33rem;
+			background: url("images/vector/orange-arrow.svg") no-repeat;
+			background-size: 80rem 33rem;
+			transform: rotate(0deg);
+		}
+
+		&:last-child::after {
+			display: none;
+		}
+	}
+</style>
