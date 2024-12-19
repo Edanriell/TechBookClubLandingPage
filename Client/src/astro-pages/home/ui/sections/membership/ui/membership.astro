@@ -67,7 +67,7 @@ import checkmarkIcon from "@public/images/vector/icon/checkmark.svg";
 						<p class="membership-benefits-list__item-description">Private sessions</p>
 					</li>
 				</ul>
-				<button class="button" type="button">Subscribe now</button>
+				<button class="button" type="button">Talk to us</button>
 			</article>
 		</li>
 	</ul>
@@ -94,6 +94,12 @@ import checkmarkIcon from "@public/images/vector/icon/checkmark.svg";
 		letter-spacing: -0.06em;
 		color: var(--colors-neutral-900);
 		margin-bottom: 24rem;
+
+		@media (width >= 768px) {
+			margin-bottom: 40rem;
+			font-size: 50rem;
+			letter-spacing: -0.04em;
+		}
 	}
 
 	.membership-section__membership-options-list {
@@ -105,12 +111,23 @@ import checkmarkIcon from "@public/images/vector/icon/checkmark.svg";
 		flex-direction: column;
 		align-items: center;
 		row-gap: 24rem;
+
+		@media (width >= 768px) {
+			flex-wrap: wrap;
+			column-gap: 24rem;
+			align-items: flex-start;
+			flex-direction: row;
+		}
 	}
 
 	.membership-options-list__item {
 		position: relative;
 		flex: 0 0 auto;
 		width: 100%;
+
+		@media (width >= 768px) {
+			max-width: clamp(331rem,43.1558vw,340rem);
+		}
 	}
 
 	.membership-options-list__membership-option {
@@ -140,8 +157,8 @@ import checkmarkIcon from "@public/images/vector/icon/checkmark.svg";
 			width: 684rem;
 			height: 684rem;
 			position: absolute;
-			top: 202rem;
-			left: 24rem;
+			top: 302rem;
+			left: 64rem;
 			z-index: 1;
 		}
 	}
@@ -251,5 +268,9 @@ import checkmarkIcon from "@public/images/vector/icon/checkmark.svg";
 		z-index: 2;
 		cursor: pointer;
 		text-transform: uppercase;
+
+		@media (width >= 768px) {
+			font-size: 18rem;
+		}
 	}
 </style>
