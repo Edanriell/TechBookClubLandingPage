@@ -1,7 +1,34 @@
 ---
-
+import Score from "@widgets/score/ui/score.astro";
 ---
 
-<section>
-	<h2>Review</h2>
+<section class="review-section">
+	<h2 class="visually-hidden">Sarah Chen, Software Architect review</h2>
+	<Score count={5} />
+	<figure class="review-section__full-review full-review">
+		<blockquote class="full-review__text">"This book club transformed my technical reading from a solitary activity into an enriching community experience. The discussions are gold!"</blockquote>
+		<figcaption class="full-review__reviewer">Sarah Chen, Software Architect</figcaption>
+	</figure>
 </section>
+
+<style lang="less">
+	.review-section {
+
+	}
+
+	.review-section__full-review {
+
+	}
+
+	.full-review {
+
+	}
+
+	.full-review__text {
+
+	}
+
+	.full-review__reviewer {
+
+	}
+</style>
