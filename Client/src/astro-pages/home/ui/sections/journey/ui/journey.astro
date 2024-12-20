@@ -1,22 +1,28 @@
 ---
-
+const journeySteps = [
+	{
+		step: "Choose your membership tier"
+	},
+	{
+		step: "Get your monthly book selection"
+	},
+	{
+		step: "Join our discussion forums"
+	},
+	{
+		step: "Attend exclusive meetups"
+	}
+]
 ---
 
 <section class="journey-section">
 	<h2 class="journey-section__title">Your tech reading journey</h2>
 	<ol class="journey-section__step-list step-list">
-		<li class="step-list__item">
-			Choose your membership tier
-		</li>
-		<li class="step-list__item">
-			Get your monthly book selection
-		</li>
-		<li class="step-list__item">
-			Join our discussion forums
-		</li>
-		<li class="step-list__item">
-			Attend exclusive meetups
-		</li>
+		{journeySteps.map(({ step }) => (
+			<li class="step-list__item">
+				{step}
+			</li>
+		))}
 	</ol>
 </section>
 

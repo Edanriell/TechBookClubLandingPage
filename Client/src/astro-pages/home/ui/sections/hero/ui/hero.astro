@@ -3,8 +3,9 @@ import { Image } from "astro:assets";
 
 import TotalScore from "@widgets/total-score/ui/total-score.astro";
 
+import Icon from "@shared/ui/icon/ui/icon.astro";
+
 import heroImage from "@public/images/raster/hero.jpg"
-import arrowDownIcon from "@public/images/vector/icon/arrow-down.svg";
 ---
 
 <section class="hero-section">
@@ -13,7 +14,7 @@ import arrowDownIcon from "@public/images/vector/icon/arrow-down.svg";
 		<p class="hero-section__text">Turn your reading time into learning time with fellow tech enthusiasts. Get curated recommendations, join vibrant discussions, and level up your skills one chapter at a time.</p>
 		<a href="#" id="" class="link">
 			<span class="link__text">Review membership options</span>
-			<Image class="link__icon" src={arrowDownIcon} alt="" width="24" height="25"/>
+			<Icon iconType="arrowDown" width={22} height={22} />
 		</a>
 		<TotalScore />
 	</div>
@@ -153,7 +154,6 @@ import arrowDownIcon from "@public/images/vector/icon/arrow-down.svg";
 	.hero-section__image {
 		display: block;
 		width: 100%;
-		max-width: 343rem;
 		height: 371rem;
 		border-radius: 7rem;
 		background: var(--colors-neutral-900);

@@ -1,4 +1,12 @@
-export type IconType = "butterfly" | "linkedin" | "typescript" | "github" | "react";
+export type IconType =
+	| "butterfly"
+	| "linkedin"
+	| "typescript"
+	| "github"
+	| "react"
+	| "checkmark"
+	| "arrowDown"
+	| "star";
 
 export type Icon = {
 	src: any;

@@ -1,7 +1,5 @@
 ---
-import { Image } from "astro:assets";
-
-import checkmarkIcon from "@public/images/vector/icon/checkmark.svg";
+import Icon from "@shared/ui/icon/ui/icon.astro";
 ---
 
 <section class="membership-section">
@@ -14,13 +12,13 @@ import checkmarkIcon from "@public/images/vector/icon/checkmark.svg";
 				<ul class="membership-option__membership-benefits-list membership-benefits-list">
 					<li class="membership-benefits-list__item">
 						<div class="membership-benefits-list__icon-wrapper">
-							<Image class="membership-benefits-list__icon" src={checkmarkIcon} alt="" width="15" height="15" />
+							<Icon iconType="checkmark" width={13} height={13} />
 						</div>
 						<p class="membership-benefits-list__item-description">1 book/month</p>
 					</li>
 					<li class="membership-benefits-list__item">
 						<div class="membership-benefits-list__icon-wrapper">
-							<Image class="membership-benefits-list__icon" src={checkmarkIcon} alt="" width="15" height="15" />
+							<Icon iconType="checkmark" width={13} height={13} />
 						</div>
 						<p class="membership-benefits-list__item-description">Online forums</p>
 					</li>
@@ -35,13 +33,13 @@ import checkmarkIcon from "@public/images/vector/icon/checkmark.svg";
 				<ul class="membership-option__membership-benefits-list membership-benefits-list">
 					<li class="membership-benefits-list__item">
 						<div class="membership-benefits-list__icon-wrapper">
-							<Image class="membership-benefits-list__icon" src={checkmarkIcon} alt="" width="15" height="15" />
+							<Icon iconType="checkmark" width={13} height={13} />
 						</div>
 						<p class="membership-benefits-list__item-description">2 books/month</p>
 					</li>
 					<li class="membership-benefits-list__item">
 						<div class="membership-benefits-list__icon-wrapper">
-							<Image class="membership-benefits-list__icon" src={checkmarkIcon} alt="" width="15" height="15" />
+							<Icon iconType="checkmark" width={13} height={13} />
 						</div>
 						<p class="membership-benefits-list__item-description">Virtual meetups</p>
 					</li>
@@ -56,13 +54,13 @@ import checkmarkIcon from "@public/images/vector/icon/checkmark.svg";
 				<ul class="membership-option__membership-benefits-list membership-benefits-list">
 					<li class="membership-benefits-list__item">
 						<div class="membership-benefits-list__icon-wrapper">
-							<Image class="membership-benefits-list__icon" src={checkmarkIcon} alt="" width="15" height="15" />
+							<Icon iconType="checkmark" width={13} height={13} />
 						</div>
 						<p class="membership-benefits-list__item-description">Team access</p>
 					</li>
 					<li class="membership-benefits-list__item">
 						<div class="membership-benefits-list__icon-wrapper">
-							<Image class="membership-benefits-list__icon" src={checkmarkIcon} alt="" width="15" height="15" />
+							<Icon iconType="checkmark" width={13} height={13} />
 						</div>
 						<p class="membership-benefits-list__item-description">Private sessions</p>
 					</li>
@@ -175,6 +173,11 @@ import checkmarkIcon from "@public/images/vector/icon/checkmark.svg";
 			top: 302rem;
 			left: 64rem;
 			z-index: 1;
+
+			@media (width >= 1440px) {
+				top: 302rem;
+				left: 104rem;
+			}
 		}
 	}
 
@@ -259,11 +262,6 @@ import checkmarkIcon from "@public/images/vector/icon/checkmark.svg";
 		display: flex;
 		align-items: center;
 		justify-content: center;
-	}
-
-	.membership-benefits-list__icon {
-		width: 13rem;
-		height: 13rem;
 	}
 
 	.membership-benefits-list__item-description {

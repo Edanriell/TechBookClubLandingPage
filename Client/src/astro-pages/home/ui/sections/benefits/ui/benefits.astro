@@ -1,8 +1,24 @@
 ---
 import { Image } from "astro:assets"
 
+import Icon from "@shared/ui/icon/ui/icon.astro";
+
 import benefitsImage from "@public/images/raster/benefits.jpg";
-import checkmarkIcon from "@public/images/vector/icon/checkmark.svg";
+
+const benefits = [
+	{
+		benefit: "Monthly curated tech reads selected by industry experts"
+	},
+	{
+		benefit: "Virtual and in-person meetups for deep-dive discussions"
+	},
+	{
+		benefit: "Early access to new tech book releases"
+	},
+	{
+		benefit: "Author Q&A sessions with tech thought leaders"
+	}
+]
 ---
 
 <section class="benefits-section">
@@ -12,30 +28,16 @@ import checkmarkIcon from "@public/images/vector/icon/checkmark.svg";
 	<div class="benefits-section__content">
 		<h2 class="benefits-section__title">Read together, grow together</h2>
 		<ul class="benefits-section__benefits-list benefits-list">
-			<li class="benefits-list__item">
-				<div class="benefits-list__item-icon-wrapper">
-					<Image class="benefits-list__item-icon" src={checkmarkIcon} alt="" width="15" height="15" />
-				</div>
-				<p class="benefits-list__item-text">Monthly curated tech reads selected by industry experts</p>
-			</li>
-			<li class="benefits-list__item">
-				<div class="benefits-list__item-icon-wrapper">
-					<Image class="benefits-list__item-icon" src={checkmarkIcon} alt="" width="15" height="15" />
-				</div>
-				<p class="benefits-list__item-text">Virtual and in-person meetups for deep-dive discussions</p>
-			</li>
-			<li class="benefits-list__item">
-				<div class="benefits-list__item-icon-wrapper">
-					<Image class="benefits-list__item-icon" src={checkmarkIcon} alt="" width="15" height="15" />
-				</div>
-				<p class="benefits-list__item-text">Early access to new tech book releases</p>
-			</li>
-			<li class="benefits-list__item">
-				<div class="benefits-list__item-icon-wrapper">
-					<Image class="benefits-list__item-icon" src={checkmarkIcon} alt="" width="15" height="15" />
-				</div>
-				<p class="benefits-list__item-text">Author Q&A sessions with tech thought leaders</p>
-			</li>
+			{
+				benefits.map(({ benefit }) => (
+					<li class="benefits-list__item">
+						<div class="benefits-list__item-icon-wrapper">
+							<Icon iconType="checkmark" width={15} height={15} />
+						</div>
+						<p class="benefits-list__item-text">{benefit}</p>
+					</li>
+				))
+			}
 		</ul>
 	</div>
 </section>
@@ -66,10 +68,7 @@ import checkmarkIcon from "@public/images/vector/icon/checkmark.svg";
 		position: relative;
 		flex: 0 0 auto;
 		margin: 0 auto;
-
-		@media(width >= 768px) {
-			width: 100%;
-		}
+		width: 100%;
 
 		@media (width >= 1440px) {
 			width: unset;
@@ -83,7 +82,6 @@ import checkmarkIcon from "@public/images/vector/icon/checkmark.svg";
 		height: 318rem;
 		background: var(--colors-neutral-900);
 		object-fit: cover;
-		max-width: 343rem;
 
 		@media (width >= 768px) {
 			border-radius: 15rem;
@@ -161,12 +159,6 @@ import checkmarkIcon from "@public/images/vector/icon/checkmark.svg";
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		flex: 0 0 auto;
-	}
-
-	.benefits-list__item-icon {
-		width: 15rem;
-		height: 15rem;
 		flex: 0 0 auto;
 	}
 
