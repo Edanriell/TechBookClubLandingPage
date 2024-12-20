@@ -2,7 +2,8 @@
 import { Image } from "astro:assets"
 
 import benefitsImage from "@public/images/raster/benefits.jpg";
-import checkmarkIcon from "@public/images/vector/icon/checkmark.svg";
+
+import Icon from "@shared/ui/icon/ui/icon.astro";
 ---
 
 <section class="benefits-section">
@@ -14,25 +15,25 @@ import checkmarkIcon from "@public/images/vector/icon/checkmark.svg";
 		<ul class="benefits-section__benefits-list benefits-list">
 			<li class="benefits-list__item">
 				<div class="benefits-list__item-icon-wrapper">
-					<Image class="benefits-list__item-icon" src={checkmarkIcon} alt="" width="15" height="15" />
+					<Icon iconType="checkmark" width={15} height={15} />
 				</div>
 				<p class="benefits-list__item-text">Monthly curated tech reads selected by industry experts</p>
 			</li>
 			<li class="benefits-list__item">
 				<div class="benefits-list__item-icon-wrapper">
-					<Image class="benefits-list__item-icon" src={checkmarkIcon} alt="" width="15" height="15" />
+					<Icon iconType="checkmark" width={15} height={15} />
 				</div>
 				<p class="benefits-list__item-text">Virtual and in-person meetups for deep-dive discussions</p>
 			</li>
 			<li class="benefits-list__item">
 				<div class="benefits-list__item-icon-wrapper">
-					<Image class="benefits-list__item-icon" src={checkmarkIcon} alt="" width="15" height="15" />
+					<Icon iconType="checkmark" width={15} height={15} />
 				</div>
 				<p class="benefits-list__item-text">Early access to new tech book releases</p>
 			</li>
 			<li class="benefits-list__item">
 				<div class="benefits-list__item-icon-wrapper">
-					<Image class="benefits-list__item-icon" src={checkmarkIcon} alt="" width="15" height="15" />
+					<Icon iconType="checkmark" width={15} height={15} />
 				</div>
 				<p class="benefits-list__item-text">Author Q&A sessions with tech thought leaders</p>
 			</li>
@@ -161,12 +162,6 @@ import checkmarkIcon from "@public/images/vector/icon/checkmark.svg";
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		flex: 0 0 auto;
-	}
-
-	.benefits-list__item-icon {
-		width: 15rem;
-		height: 15rem;
 		flex: 0 0 auto;
 	}
 
