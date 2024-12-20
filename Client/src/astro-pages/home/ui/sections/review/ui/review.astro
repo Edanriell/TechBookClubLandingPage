@@ -6,7 +6,7 @@ import Icon from "@shared/ui/icon/ui/icon.astro";
 	<h2 class="visually-hidden">Sarah Chen, Software Architect review</h2>
 	<div class="review-section__stars-wrapper">
 		{
-			Array.from(Array(5).keys()).map((_, i) => (<Icon iconType="star" width={18} height={17} />))
+			Array.from(Array(5).keys()).map((_, i) => (<Icon iconType="star" width={18} height={18} />))
 		}
 	</div>
 	<figure class="review-section__full-review full-review">
@@ -24,7 +24,8 @@ import Icon from "@shared/ui/icon/ui/icon.astro";
 		}
 
 		@media (width >= 1440px) {
-			margin: 120rem 135rem;
+			margin: 120rem auto 120rem auto;
+			max-width: 970rem;
 		}
 	}
 
@@ -32,8 +33,12 @@ import Icon from "@shared/ui/icon/ui/icon.astro";
 		display: flex;
 		flex-direction: row;
 		align-items: center;
-		column-gap: 6rem;
+		column-gap: 16rem;
 		margin-bottom: 32rem;
+
+		@media (width >= 1440px) {
+			justify-content: center;
+		}
 	}
 
 	.review-section__full-review {
@@ -45,6 +50,11 @@ import Icon from "@shared/ui/icon/ui/icon.astro";
 		flex-direction: column;
 		align-items: flex-start;
 		row-gap: 32rem;
+
+		@media (max-width: 1440px) {
+			align-items: center;
+			margin: 0 auto;
+		}
 	}
 
 	.full-review__text {
@@ -60,6 +70,10 @@ import Icon from "@shared/ui/icon/ui/icon.astro";
 			line-height: 130%;
 			letter-spacing: -0.03em;
 		}
+
+		@media (width >= 1440px) {
+			text-align: center;
+		}
 	}
 
 	.full-review__reviewer {
@@ -69,5 +83,9 @@ import Icon from "@shared/ui/icon/ui/icon.astro";
 		line-height: 140%;
 		letter-spacing: -0.03em;
 		color: var(--colors-neutral-700);
+
+		@media (width >= 1440px) {
+			text-align: center;
+		}
 	}
 </style>
