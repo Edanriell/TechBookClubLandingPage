@@ -1,9 +1,24 @@
 ---
 import { Image } from "astro:assets"
 
+import Icon from "@shared/ui/icon/ui/icon.astro";
+
 import benefitsImage from "@public/images/raster/benefits.jpg";
 
-import Icon from "@shared/ui/icon/ui/icon.astro";
+const benefits = [
+	{
+		benefit: "Monthly curated tech reads selected by industry experts"
+	},
+	{
+		benefit: "Virtual and in-person meetups for deep-dive discussions"
+	},
+	{
+		benefit: "Early access to new tech book releases"
+	},
+	{
+		benefit: "Author Q&A sessions with tech thought leaders"
+	}
+]
 ---
 
 <section class="benefits-section">
@@ -13,30 +28,16 @@ import Icon from "@shared/ui/icon/ui/icon.astro";
 	<div class="benefits-section__content">
 		<h2 class="benefits-section__title">Read together, grow together</h2>
 		<ul class="benefits-section__benefits-list benefits-list">
-			<li class="benefits-list__item">
-				<div class="benefits-list__item-icon-wrapper">
-					<Icon iconType="checkmark" width={15} height={15} />
-				</div>
-				<p class="benefits-list__item-text">Monthly curated tech reads selected by industry experts</p>
-			</li>
-			<li class="benefits-list__item">
-				<div class="benefits-list__item-icon-wrapper">
-					<Icon iconType="checkmark" width={15} height={15} />
-				</div>
-				<p class="benefits-list__item-text">Virtual and in-person meetups for deep-dive discussions</p>
-			</li>
-			<li class="benefits-list__item">
-				<div class="benefits-list__item-icon-wrapper">
-					<Icon iconType="checkmark" width={15} height={15} />
-				</div>
-				<p class="benefits-list__item-text">Early access to new tech book releases</p>
-			</li>
-			<li class="benefits-list__item">
-				<div class="benefits-list__item-icon-wrapper">
-					<Icon iconType="checkmark" width={15} height={15} />
-				</div>
-				<p class="benefits-list__item-text">Author Q&A sessions with tech thought leaders</p>
-			</li>
+			{
+				benefits.map(({ benefit }) => (
+					<li class="benefits-list__item">
+						<div class="benefits-list__item-icon-wrapper">
+							<Icon iconType="checkmark" width={15} height={15} />
+						</div>
+						<p class="benefits-list__item-text">{benefit}</p>
+					</li>
+				))
+			}
 		</ul>
 	</div>
 </section>
