@@ -1,10 +1,14 @@
 ---
-import Score from "@widgets/score/ui/score.astro";
+import Icon from "@shared/ui/icon/ui/icon.astro";
 ---
 
 <section class="review-section">
 	<h2 class="visually-hidden">Sarah Chen, Software Architect review</h2>
-	<Score count={5} />
+	<div class="review-section__stars-wrapper">
+		{
+			Array.from(Array(5).keys()).map((_, i) => (<Icon iconType="star" width={18} height={17} />))
+		}
+	</div>
 	<figure class="review-section__full-review full-review">
 		<blockquote class="full-review__text">"This book club transformed my technical reading from a solitary activity into an enriching community experience. The discussions are gold!"</blockquote>
 		<figcaption class="full-review__reviewer">Sarah Chen, Software Architect</figcaption>
@@ -13,22 +17,51 @@ import Score from "@widgets/score/ui/score.astro";
 
 <style lang="less">
 	.review-section {
+		margin: 64rem 16rem;
 
+		@media (width >= 768px) {
+			margin: 80rem 32rem;
+		}
+
+		@media (width >= 1440px) {
+			margin: 120rem 135rem;
+		}
+	}
+
+	.review-section__stars-wrapper {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		column-gap: 6rem;
+		margin-bottom: 32rem;
 	}
 
 	.review-section__full-review {
-
+		position: relative;
 	}
 
 	.full-review {
-
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		row-gap: 32rem;
 	}
 
 	.full-review__text {
-
+		font-family: var(--font-family), sans-serif;
+		font-weight: 600;
+		font-size: 24rem;
+		line-height: 110%;
+		letter-spacing: -0.04em;
+		color: var(--colors-neutral-900);
 	}
 
 	.full-review__reviewer {
-
+		font-family: var(--second-family), sans-serif;
+		font-weight: 400;
+		font-size: 20rem;
+		line-height: 140%;
+		letter-spacing: -0.03em;
+		color: var(--colors-neutral-700);
 	}
 </style>

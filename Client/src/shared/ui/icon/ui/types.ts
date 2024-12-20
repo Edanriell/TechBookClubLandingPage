@@ -5,7 +5,8 @@ export type IconType =
 	| "github"
 	| "react"
 	| "checkmark"
-	| "arrowDown";
+	| "arrowDown"
+	| "star";
 
 export type Icon = {
 	src: any;

@@ -8,6 +8,7 @@ import githubLogotypeIcon from "@public/images/vector/icon/github.svg";
 import reactLogotypeIcon from "@public/images/vector/icon/react.svg";
 import checkmarkIcon from "@public/images/vector/icon/checkmark.svg";
 import arrowDownIcon from "@public/images/vector/icon/arrow-down.svg";
+import startIcon from "@public/images/vector/icon/star.svg";
 
 import { type IconType, type Icon } from "./types";
 
@@ -54,6 +55,11 @@ const icons: Record<IconType, Icon> = {
 		src: arrowDownIcon,
 		alt: "",
 		class: "icon icon--type--arrow-down",
+	},
+	star: {
+		src: startIcon,
+		alt: "",
+		class: "icon icon--type--star",
 	},
 };
 
@@ -119,5 +125,9 @@ if (!icon) {
 
 	.icon--type--arrow-down {
 		color: var(--colors-neutral-900);
+	}
+
+	.icon--type--star {
+		color: #ff9a60;
 	}
 </style>

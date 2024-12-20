@@ -1,7 +1,5 @@
 ---
-import { Image } from "astro:assets";
-
-import startIcon from "@public/images/vector/icon/star.svg";
+import Icon from "@shared/ui/icon/ui/icon.astro";
 
 interface Props {
 	count: 1 | 2 | 3 | 4 | 5;
@@ -15,7 +13,7 @@ const starsCount = Math.max(1, Math.min(5, count));
 <ol class="score-list">
 	{Array.from({ length: starsCount }).map(() => (
 			<li class="score-list__item">
-				<Image class="score-list__score-icon" src={startIcon} alt="" width="16" height="15"/>
+				<Icon iconType="star" width={16} height={15} />
 			</li>
 	))}
 </ol>
