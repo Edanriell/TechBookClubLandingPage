@@ -21,6 +21,10 @@ import Icon from "@shared/ui/icon/ui/icon.astro";
 		background: var(--colors-neutral-900);
 		border-radius: 16rem 16rem 0 0;
 		padding: 48rem 0 64rem 0;
+
+		@media (width >= 768px) {
+			padding: 64rem 0 64rem 0;
+		}
 	}
 
 	.offer-section__wrapper {
@@ -28,6 +32,10 @@ import Icon from "@shared/ui/icon/ui/icon.astro";
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+
+		@media (width >= 768px) {
+			margin: 0 32rem;
+		}
 	}
 
 	.offer-section__title {
@@ -39,6 +47,11 @@ import Icon from "@shared/ui/icon/ui/icon.astro";
 		text-align: center;
 		color: var(--colors-neutral-50);
 		margin-bottom: 40rem;
+
+		@media (width >= 768px) {
+			font-size: 50rem;
+			letter-spacing: -0.04em;
+		}
 	}
 
 	.link {
