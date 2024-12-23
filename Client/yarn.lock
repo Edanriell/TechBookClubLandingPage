@@ -1786,6 +1786,7 @@ __metadata:
     "@types/react": "npm:^19.0.2"
     "@types/react-dom": "npm:^19.0.2"
     astro: "npm:^5.0.5"
+    clsx: "npm:^2.1.1"
     less: "npm:^4.2.1"
     motion: "npm:^11.15.0"
     prettier: "npm:^3.4.2"
