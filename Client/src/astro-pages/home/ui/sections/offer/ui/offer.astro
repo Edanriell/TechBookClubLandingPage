@@ -1,3 +1,114 @@
 ---
+import TotalScore from "@widgets/total-score/ui/total-score.astro";
 
+import Icon from "@shared/ui/icon/ui/icon.astro";
 ---
+
+<section class="offer-section">
+	<div class="offer-section__wrapper">
+		<h2 class="offer-section__title">Ready to debug your reading list?</h2>
+		<a href="#" id="" class="link link--style--ghost">
+			<span class="link__text">Review membership options</span>
+			<Icon iconType="arrowUp" width={22} height={22} />
+		</a>
+		<TotalScore className="total-score__type--footer"/>
+	</div>
+</section>
+
+<style lang="less">
+	.offer-section {
+		position: relative;
+		background: var(--colors-neutral-900);
+		border-radius: 16rem 16rem 0 0;
+		padding: 48rem 0 64rem 0;
+
+		@media (width >= 768px) {
+			padding: 64rem 0 64rem 0;
+		}
+
+		@media (width >= 1440px) {
+			padding: 80rem 0 64rem 0;
+		}
+	}
+
+	.offer-section__wrapper {
+		margin: 0 16rem;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		@media (width >= 768px) {
+			margin: 0 32rem;
+		}
+
+		@media (width >= 1440px) {
+			margin: 0 auto;
+			max-width: 685rem;
+		}
+	}
+
+	.offer-section__title {
+		font-family: var(--font-family), sans-serif;
+		font-weight: 600;
+		font-size: 34rem;
+		line-height: 130%;
+		letter-spacing: -0.06em;
+		text-align: center;
+		color: var(--colors-neutral-50);
+		margin-bottom: 40rem;
+
+		@media (width >= 768px) {
+			font-size: 50rem;
+			letter-spacing: -0.04em;
+		}
+	}
+
+	.link {
+		position: relative;
+		border: 2rem solid var(--colors-neutral-900);
+		border-radius: 8rem;
+		padding: 21.5rem 23rem 21.5rem 23rem;
+		background: var(--colors-light-salmon-50);
+		display: flex;
+		flex-direction: row;
+		column-gap: clamp(10rem, 2.8vw, 16rem);
+		align-items: center;
+		width: 100%;
+		max-width: 343rem;
+		max-height: 64rem;
+
+		@media (width >= 768px) {
+			max-width: 380rem;
+			padding: 20.5rem 24rem 20.5rem 24rem;
+			column-gap: 16rem;
+		}
+	}
+
+	.link--style--ghost {
+		border: 2px solid var(--colors-neutral-0);
+		border-radius: 8px;
+		background: transparent;
+	}
+
+	.link__text {
+		font-family: var(--font-family), sans-serif;
+		font-size: 16rem;
+		line-height: 130%;
+		letter-spacing: -0.06em;
+		text-transform: uppercase;
+		flex: 0 0 auto;
+
+		font-weight: 600;
+		color: var(--colors-neutral-0);
+
+		@media (width >= 768px) {
+			font-size: 18rem;
+		}
+	}
+
+	.link__icon {
+		width: 24rem;
+		height: 25rem;
+		flex: 0 0 auto;
+	}
+</style>

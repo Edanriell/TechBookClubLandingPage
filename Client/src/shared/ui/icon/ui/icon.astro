@@ -9,6 +9,7 @@ import reactLogotypeIcon from "@public/images/vector/icon/react.svg";
 import checkmarkIcon from "@public/images/vector/icon/checkmark.svg";
 import arrowDownIcon from "@public/images/vector/icon/arrow-down.svg";
 import startIcon from "@public/images/vector/icon/star.svg";
+import arrowUpIcon from "@public/images/vector/icon/arrow-up.svg";
 
 import { type IconType, type Icon } from "./types";
 
@@ -60,6 +61,11 @@ const icons: Record<IconType, Icon> = {
 		src: startIcon,
 		alt: "",
 		class: "icon icon--type--star",
+	},
+	arrowUp: {
+		src: arrowUpIcon,
+		alt: "",
+		class: "icon icon--type--arrow-up",
 	},
 };
 
@@ -129,5 +135,9 @@ if (!icon) {
 
 	.icon--type--star {
 		color: #ff9a60;
+	}
+
+	.icon--type--arrow-up {
+		color: #fff;
 	}
 </style>
