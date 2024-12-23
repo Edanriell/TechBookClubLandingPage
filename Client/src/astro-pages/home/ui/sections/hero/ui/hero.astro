@@ -13,7 +13,7 @@ import heroImage from "@public/images/raster/hero.jpg"
 	<div class="hero-section__content">
 		<h1 class="hero-section__title">Join the ultimate tech book club</h1>
 		<p class="hero-section__text">Turn your reading time into learning time with fellow tech enthusiasts. Get curated recommendations, join vibrant discussions, and level up your skills one chapter at a time.</p>
-		<Link href="#membership" type="gradient">
+		<Link client:only="react" href="#membership" type="gradient">
 			Review membership options
 			<div slot="icon">
 				<Icon iconType="arrowDown" width={22} height={22} />
