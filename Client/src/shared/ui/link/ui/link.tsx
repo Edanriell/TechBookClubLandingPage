@@ -2,6 +2,7 @@ import "./styles.less";
 
 import { type FC, type ReactNode } from "react";
 import clsx from "clsx";
+import { motion } from "motion/react";
 
 type LinkProps = {
 	href: string;
@@ -11,6 +12,23 @@ type LinkProps = {
 };
 
 const Link: FC<LinkProps> = ({ href, type, icon, children }) => {
+	const linkAnimationVariants = {
+		gradient: {
+			scale: 1.1,
+			backgroundImage: "linear-gradient(90deg, #ffe2d1 0%, #fff5ef 100%)"
+		},
+		focusGradient: {
+			boxShadow: "0 0 0 3rem #e6e1df, 0 0 0 5rem #062630"
+		},
+		ghost: {
+			scale: 1.1,
+			backgroundImage: "linear-gradient(90deg, #385159 0%, #062630 100%)"
+		},
+		focusGhost: {
+			boxShadow: "0 0 0 3rem #062630, 0 0 0 5rem #e6e1df"
+		}
+	};
+
 	const linkClasses = clsx({
 		link: true,
 		"link--type--ghost": type === "ghost",
@@ -24,10 +42,25 @@ const Link: FC<LinkProps> = ({ href, type, icon, children }) => {
 	});
 
 	return (
-		<a href={href} className={linkClasses}>
+		<motion.a
+			initial={{
+				outline: "none"
+			}}
+			whileHover={type === "gradient" ? "gradient" : "ghost"}
+			variants={linkAnimationVariants}
+			whileTap={{ scale: 0.95 }}
+			whileFocus={type === "gradient" ? "focusGradient" : "focusGhost"}
+			transition={{
+				type: "spring",
+				duration: 0.45,
+				bounce: 0
+			}}
+			href={href}
+			className={linkClasses}
+		>
 			<span className={linkTextClasses}>{children}</span>
 			{icon && icon}
-		</a>
+		</motion.a>
 	);
 };
 

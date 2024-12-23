@@ -8,7 +8,7 @@ import Link from "@shared/ui/link/ui/link.tsx";
 <section class="offer-section">
 	<div class="offer-section__wrapper">
 		<h2 class="offer-section__title">Ready to debug your reading list?</h2>
-		<Link href="#membership" type="ghost">
+		<Link client:only="react" href="#membership" type="ghost">
 			Review membership options
 			<div slot="icon">
 				<Icon iconType="arrowUp" width={22} height={22} />
