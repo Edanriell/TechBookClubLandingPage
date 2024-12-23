@@ -1,5 +1,6 @@
 ---
 import Icon from "@shared/ui/icon/ui/icon.astro";
+import Button from "@shared/ui/button/ui/button.tsx";
 ---
 
 <section class="membership-section" id="membership">
@@ -23,7 +24,7 @@ import Icon from "@shared/ui/icon/ui/icon.astro";
 						<p class="membership-benefits-list__item-description">Online forums</p>
 					</li>
 				</ul>
-				<button class="button" type="button">Subscribe now</button>
+				<Button>Subscribe now</Button>
 			</article>
 		</li>
 		<li class="membership-options-list__item">
@@ -44,7 +45,7 @@ import Icon from "@shared/ui/icon/ui/icon.astro";
 						<p class="membership-benefits-list__item-description">Virtual meetups</p>
 					</li>
 				</ul>
-				<button class="button" type="button">Subscribe now</button>
+				<Button>Subscribe now</Button>
 			</article>
 		</li>
 		<li class="membership-options-list__item">
@@ -65,7 +66,7 @@ import Icon from "@shared/ui/icon/ui/icon.astro";
 						<p class="membership-benefits-list__item-description">Private sessions</p>
 					</li>
 				</ul>
-				<button class="button" type="button">Talk to us</button>
+				<Button>Talk to us</button>
 			</article>
 		</li>
 	</ul>
@@ -274,30 +275,6 @@ import Icon from "@shared/ui/icon/ui/icon.astro";
 
 		@media (width >= 1440px) {
 			letter-spacing: -0.02em;
-		}
-	}
-
-	.button {
-		position: relative;
-		border: 2rem solid var(--colors-neutral-900);
-		border-radius: 8rem;
-		padding: 20rem 24rem;
-		max-height: 61rem;
-		background: var(--colors-light-salmon-50);
-		font-family: var(--font-family), sans-serif;
-		font-weight: 600;
-		font-size: 16rem;
-		line-height: 130%;
-		letter-spacing: -0.06em;
-		color: var(--colors-neutral-900);
-		width: 100%;
-		z-index: 2;
-		cursor: pointer;
-		text-transform: uppercase;
-
-		@media (width >= 768px) {
-			font-size: 18rem;
-			max-height: 63rem;
 		}
 	}
 </style>
