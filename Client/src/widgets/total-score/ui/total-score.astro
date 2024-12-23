@@ -7,6 +7,12 @@ import user1image from "@public/images/raster/persons/man-1.jpg";
 import user2image from "@public/images/raster/persons/man-2.jpg";
 import user3image from "@public/images/raster/persons/man-3.jpg";
 
+interface Props {
+	className?: string;
+}
+
+const { className } = Astro.props;
+
 const usersImages = [
 	{
 		imageSrc: user1image,
@@ -22,7 +28,7 @@ const usersImages = [
 const activeUsersCount: number = 200;
 ---
 
-<div class="total-score">
+<div class={"total-score " + className}>
 	<ul class="total-score__users-image-list users-image-list">
 		{usersImages.map(({ imageSrc }) => (
 			<li class="users-image-list__item">
@@ -81,6 +87,6 @@ const activeUsersCount: number = 200;
 		font-size: 14rem;
 		line-height: 120%;
 		letter-spacing: -0.07em;
-		color: var(--colors-neutral-700);
+		color: inherit;
 	}
 </style>

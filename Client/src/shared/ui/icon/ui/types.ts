@@ -6,7 +6,8 @@ export type IconType =
 	| "react"
 	| "checkmark"
 	| "arrowDown"
-	| "star";
+	| "star"
+	| "arrowUp";
 
 export type Icon = {
 	src: any;
