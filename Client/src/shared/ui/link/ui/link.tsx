@@ -18,7 +18,7 @@ const Link: FC<LinkProps> = ({ href, type, icon, children }) => {
 			backgroundImage: "linear-gradient(90deg, #ffe2d1 0%, #fff5ef 100%)"
 		},
 		focusGradient: {
-			boxShadow: "0 0 0 3rem #e6e1df, 0 0 0 5rem #062630"
+			boxShadow: "0 0 0 3rem #fff, 0 0 0 5rem #385159"
 		},
 		ghost: {
 			scale: 1.1,
