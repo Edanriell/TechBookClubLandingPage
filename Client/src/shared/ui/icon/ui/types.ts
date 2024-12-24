@@ -9,7 +9,7 @@ export type IconType =
 	| "star"
 	| "arrowUp";
 
-export type Icon = {
+export type IconComponent = {
 	src: any;
 	alt: string;
 	class: string;

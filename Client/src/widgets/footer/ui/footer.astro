@@ -1,11 +1,11 @@
 ---
-import SocialLinks from "@shared/ui/social-links/ui/social-links.astro";
+import SocialLinks from "@shared/ui/social-links/ui/social-links.tsx";
 ---
 
 <footer class="footer">
 	<div class="footer__wrapper">
 		<p class="footer__copyright">© 2024 – Tech Book Club</p>
-		<SocialLinks />
+		<SocialLinks client:only="react" />
 	</div>
 </footer>
 
