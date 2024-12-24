@@ -28,8 +28,8 @@ const socialLinks: Array<SocialLink> = [
 const SocialLinks: FC = () => {
 	return (
 		<ul className="social-links">
-			{socialLinks.map(({ href, description, iconType }) => (
-				<li className="social-links__link">
+			{socialLinks.map(({ href, description, iconType }, index) => (
+				<li key={index} className="social-links__link">
 					<motion.a
 						href={href}
 						whileHover={{

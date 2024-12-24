@@ -3,9 +3,11 @@ import Icon from "../../../shared/ui/icon/ui/icon";
 
 interface Props {
 	count: 1 | 2 | 3 | 4 | 5;
+	loading?: "eager" | "lazy";
+	decoding?: "async" | "auto" | "sync";
 }
 
-const { count } = Astro.props;
+const { count, loading, decoding } = Astro.props;
 
 const starsCount = Math.max(1, Math.min(5, count));
 ---
@@ -13,7 +15,7 @@ const starsCount = Math.max(1, Math.min(5, count));
 <ol class="score-list">
 	{Array.from({ length: starsCount }).map(() => (
 			<li class="score-list__item">
-				<Icon iconType="star" width={16} height={15} />
+				<Icon loading={loading} decoding={decoding} iconType="star" width={16} height={15} />
 			</li>
 	))}
 </ol>

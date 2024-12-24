@@ -18,6 +18,8 @@ type IconProps = {
 	iconType: IconType;
 	width: number;
 	height: number;
+	loading?: "eager" | "lazy";
+	decoding?: "async" | "auto" | "sync";
 };
 
 const icons: Record<IconType, IconComponent> = {
@@ -68,7 +70,7 @@ const icons: Record<IconType, IconComponent> = {
 	}
 };
 
-const Icon: FC<IconProps> = ({ iconType, width, height }) => {
+const Icon: FC<IconProps> = ({ iconType, width, height, loading = "lazy", decoding = "async" }) => {
 	const icon = icons[iconType];
 
 	if (!icon) {
@@ -79,6 +81,8 @@ const Icon: FC<IconProps> = ({ iconType, width, height }) => {
 		<Fragment>
 			{icon && (
 				<img
+					decoding={decoding}
+					loading={loading}
 					className={icon.class}
 					src={icon.src}
 					alt={icon.alt}
