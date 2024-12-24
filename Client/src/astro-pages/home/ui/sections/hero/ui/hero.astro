@@ -16,13 +16,13 @@ import heroImage from "@public/images/raster/hero.jpg"
 		<Link client:only="react" href="#membership" type="gradient">
 			Review membership options
 			<div slot="icon">
-				<Icon iconType="arrowDown" width={22} height={22} />
+				<Icon iconType="arrowDown" width={22} height={22} loading="eager" decoding="async" />
 			</div>
 		</Link>
-		<TotalScore className="total-score__type--hero"/>
+		<TotalScore loading="eager" decoding="async" className="total-score__type--hero"/>
 	</div>
 	<div class="hero-section__image-wrapper">
-		<Image class="hero-section__image" src={heroImage} alt="Bunch of persons reading books in library" />
+		<Image loading="eager" class="hero-section__image" src={heroImage} alt="Bunch of persons reading books in library" />
 	</div>
 	<div class="hero-section__image-pattern"></div>
 	<div class="hero-section__glow"></div>
